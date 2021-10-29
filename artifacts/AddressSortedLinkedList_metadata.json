@@ -1,0 +1,277 @@
+{
+	"compiler": {
+		"version": "0.5.13+commit.5b0b510c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "b",
+						"type": "bytes32"
+					}
+				],
+				"name": "toAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					}
+				],
+				"name": "toBytes",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"contains(SortedLinkedList.List storage,address)": {
+					"params": {
+						"key": "The element key.",
+						"list": "A storage pointer to the underlying list."
+					},
+					"return": "Whether or not the key is in the sorted list."
+				},
+				"getElements(SortedLinkedList.List storage)": {
+					"return": "An unpacked list of elements from largest to smallest."
+				},
+				"getKeys(SortedLinkedList.List storage)": {
+					"params": {
+						"list": "A storage pointer to the underlying list."
+					},
+					"return": "All element keys from head to tail."
+				},
+				"getValue(SortedLinkedList.List storage,address)": {
+					"params": {
+						"key": "The element key.",
+						"list": "A storage pointer to the underlying list."
+					},
+					"return": "The element value."
+				},
+				"headN(SortedLinkedList.List storage,uint256)": {
+					"params": {
+						"list": "A storage pointer to the underlying list.",
+						"n": "The number of elements to return."
+					},
+					"return": "The keys of the greatest elements."
+				},
+				"insert(SortedLinkedList.List storage,address,uint256,address,address)": {
+					"params": {
+						"greaterKey": "The key of the element greater than the element to insert.",
+						"key": "The key of the element to insert.",
+						"lesserKey": "The key of the element less than the element to insert.",
+						"list": "A storage pointer to the underlying list.",
+						"value": "The element value."
+					}
+				},
+				"numElementsGreaterThan(SortedLinkedList.List storage,uint256,uint256)": {
+					"params": {
+						"list": "A storage pointer to the underlying list.",
+						"max": "The maximum number returned by this function.",
+						"threshold": "The number that the element must exceed to be included."
+					},
+					"return": "The minimum of `max` and the  number of elements in the list > threshold."
+				},
+				"remove(SortedLinkedList.List storage,address)": {
+					"params": {
+						"key": "The key of the element to remove.",
+						"list": "A storage pointer to the underlying list."
+					}
+				},
+				"update(SortedLinkedList.List storage,address,uint256,address,address)": {
+					"details": "Note that only one of \"lesserKey\" or \"greaterKey\" needs to be correct to reduce friction.",
+					"params": {
+						"greaterKey": "The key of the element will be just right of `key` after the update.",
+						"key": "The element key.",
+						"lesserKey": "The key of the element will be just left of `key` after the update.",
+						"list": "A storage pointer to the underlying list.",
+						"value": "The element value."
+					}
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {
+				"contains(SortedLinkedList.List storage,address)": {
+					"notice": "Returns whether or not a particular key is present in the sorted list."
+				},
+				"getElements(SortedLinkedList.List storage)": {
+					"notice": "Gets all elements from the doubly linked list."
+				},
+				"getKeys(SortedLinkedList.List storage)": {
+					"notice": "Gets all element keys from the doubly linked list."
+				},
+				"getValue(SortedLinkedList.List storage,address)": {
+					"notice": "Returns the value for a particular key in the sorted list."
+				},
+				"headN(SortedLinkedList.List storage,uint256)": {
+					"notice": "Returns the N greatest elements of the list."
+				},
+				"insert(SortedLinkedList.List storage,address,uint256,address,address)": {
+					"notice": "Inserts an element into a doubly linked list."
+				},
+				"numElementsGreaterThan(SortedLinkedList.List storage,uint256,uint256)": {
+					"notice": "Returns the minimum of `max` and the  number of elements in the list > threshold."
+				},
+				"remove(SortedLinkedList.List storage,address)": {
+					"notice": "Removes an element from the doubly linked list."
+				},
+				"update(SortedLinkedList.List storage,address,uint256,address,address)": {
+					"notice": "Updates an element in the list."
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Election.sol": "AddressSortedLinkedList"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Console.sol": {
+			"keccak256": "0xf31f834ad985a2976d91b68a1c4edf926a9fe09b8e161eadf99adbaf2c1235c7",
+			"urls": [
+				"bzz-raw://a13192953dfa5e6419a91b21abad877577e4df17814037029cb69578bd03814e",
+				"dweb:/ipfs/QmfLS1iw6SNFBvXkKj9qHkZ8P4Dp7mjKQaV7JAAjtvthTq"
+			]
+		},
+		"Election.sol": {
+			"keccak256": "0x1c62b334e6e78cddc61a9406d4fda6f9438f4e0e7adf5efa855b3b34c8ee4fe0",
+			"urls": [
+				"bzz-raw://a5e8193065f5f54623cd2667fbcd3060c66c8a6406a9b5ee4a9c39291ca607ca",
+				"dweb:/ipfs/QmXLyWnoUDf6EMifrwpKjFQdMvQNoBCsUF5muPyBrLu928"
+			]
+		},
+		"FixidityLib.sol": {
+			"keccak256": "0x0e0bebd734ea7d05caa14dd4d6b62675c445ee76291307030856f9b5f0770f99",
+			"urls": [
+				"bzz-raw://cfdfd2237b1f8914dd8f10e5cfbbdf8ef360c12a3f3027610d87c6ef31c507ca",
+				"dweb:/ipfs/QmUtkMCHXGR8xR8NDSKyr5ks2ZQcJQgogSv5PbJ8TdKu5z"
+			]
+		},
+		"Heap.sol": {
+			"keccak256": "0xf4cb4c504e770b0130889fb575924969e3dca6648fb7e3a35578c95ff224942f",
+			"urls": [
+				"bzz-raw://0bc07c37b64fe7bdb3837d7a702062234cd9f01934057209da4fe376a4fd61d6",
+				"dweb:/ipfs/QmSSZ3ttSzqMknAqYRjcQXivcM6YYAjdFoqoSTcfaBk4LU"
+			]
+		},
+		"IAccounts.sol": {
+			"keccak256": "0xa05af846fa72b278f6dae96684f5e99f2abdcc5ce6753d83de77b1d277e7bbc9",
+			"urls": [
+				"bzz-raw://9f3327064a130e183692cb2ef068c295fddb087d108c5d7449baa0ae01f578d0",
+				"dweb:/ipfs/QmTuNSE1FYETqt3MUvd2xE4fhVVhxzYFqUF54pgpMctN5B"
+			]
+		},
+		"ILockedGold.sol": {
+			"keccak256": "0x22562c31312723af9d6e9a4856d34bc500689186ec1bbe0facc8ab52500b8ff1",
+			"urls": [
+				"bzz-raw://ec9407b1b03b664b4a9d13cd83290c5329c59678dff74e2f8184fcc6fdaa536e",
+				"dweb:/ipfs/QmfGyU4WfYbeWC4gZjTRiwruFhAQaLFU3iXJHocTVho1Ct"
+			]
+		},
+		"IRegistry.sol": {
+			"keccak256": "0x83c12b6395bdac8526cad7e1089cfd70f31f8582333cbb4c1c94d755f9b0ffa2",
+			"urls": [
+				"bzz-raw://ba7781680b68887d2ab7c923e1f86a05c0091d75cd401de48a26b894f6483225",
+				"dweb:/ipfs/QmQS1jzBHy67CZJCTkowRUhFgGbNaFavh9zV7KytRYiQpQ"
+			]
+		},
+		"IValidators.sol": {
+			"keccak256": "0x66d153d77fdfe6a468e9aa5feb069528f4bf694fca8ffd615a5f60a89c5ba4c2",
+			"urls": [
+				"bzz-raw://35530096df2c626c616fa207a3ffe93f1cd6768d3729421615d97c6e049f52d1",
+				"dweb:/ipfs/Qmc1r4dzUaQFQCdQ3wR96EvppqgPa7xXZHMajnzWywBYm3"
+			]
+		},
+		"IValidators2.sol": {
+			"keccak256": "0x0859896e22452023c78e41a469fc327422a1a26a2b6622350c04333399c9b894",
+			"urls": [
+				"bzz-raw://343d790a9490cab5a910d6194770a677178afd047b3ade2d27faa5fc636d6b62",
+				"dweb:/ipfs/QmT9GXVXrMi4maAj13ABohojSpM3LJUxzT8pV8aFSG6zhF"
+			]
+		},
+		"Initializable.sol": {
+			"keccak256": "0x83419175e397c0df7bf4657451fae81bad4ef97f3ff7b5e9823bad2b19777c77",
+			"urls": [
+				"bzz-raw://e75bf4255c6a635b802cff1eb914e3e72d7fbf19a267eb25e6c866a30099686d",
+				"dweb:/ipfs/QmWm3GQoHtbGKdA8b7eiXoR9v9KJDEcGz52tzeTmocYqPC"
+			]
+		},
+		"ReentrancyGuard.sol": {
+			"keccak256": "0x17c28fd7feef362be94f535042d8d16dac211f93c82eaa1575e7c9f1c8d0b9f6",
+			"urls": [
+				"bzz-raw://b5578f631189b8b2eb10fc60660c1e0d2f159dad5df67054c65c166c9c4338f2",
+				"dweb:/ipfs/QmdiC7WsNgvungHaL7F9ML2Vrd7NZYjBWnVQ9Aaow2JBUA"
+			]
+		},
+		"SortedLinkedList.sol": {
+			"keccak256": "0xb17cd2194f67e4d2fd13b75705ee36585078c11f2d5afe7dfa63dede8988f1fe",
+			"urls": [
+				"bzz-raw://4aba7c39c0690ff726544201af081db7df0e6f4adfbfc799b52fdbd7b5a8ead0",
+				"dweb:/ipfs/QmYD2dP2Zcxk9aLwG6GANJbZw2P6bTrKC3geEx3ERGfCgT"
+			]
+		},
+		"openzeppelin-solidity/contracts/GSN/Context.sol": {
+			"keccak256": "0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061",
+			"urls": [
+				"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436",
+				"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG"
+			]
+		},
+		"openzeppelin-solidity/contracts/math/Math.sol": {
+			"keccak256": "0x4b5aa451e4e8801478708f94b118a7821c0500d676255eaf89fc78c14856ce4e",
+			"urls": [
+				"bzz-raw://bed15b3f35ed05505efc8fb5cb01d06c52230fbcaadf4ed24a85b1ac2f15f33c",
+				"dweb:/ipfs/QmS6tW81u8E4tvzVfVuqEuMCkdwAozQ6pKJPRBR4JEVmQp"
+			]
+		},
+		"openzeppelin-solidity/contracts/math/SafeMath.sol": {
+			"keccak256": "0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076",
+			"urls": [
+				"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f",
+				"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq"
+			]
+		},
+		"openzeppelin-solidity/contracts/ownership/Ownable.sol": {
+			"keccak256": "0x6fb9d7889769d7cc161225f9ef7a90e468ba9788b253816f8d8b6894d3472c24",
+			"urls": [
+				"bzz-raw://cf4c00fc3c37cc5acf0c82ec6fd97bab67d72c2567fdc0ebf023d9c09b30a08e",
+				"dweb:/ipfs/Qmb7TChG6DsEDX7LooJ4vmxot19f7VXX8S1zUGPeJTWbwZ"
+			]
+		}
+	},
+	"version": 1
+}

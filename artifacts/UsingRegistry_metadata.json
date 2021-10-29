@@ -1,0 +1,253 @@
+{
+	"compiler": {
+		"version": "0.5.13+commit.5b0b510c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					}
+				],
+				"name": "RegistrySet",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "registry",
+				"outputs": [
+					{
+						"internalType": "contract IRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					}
+				],
+				"name": "setRegistry",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setRegistry(address)": {
+					"params": {
+						"registryAddress": "The address of a registry contract for routing to other contracts."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {
+				"setRegistry(address)": {
+					"notice": "Updates the address pointing to a Registry contract."
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Validators.sol": "UsingRegistry"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Console.sol": {
+			"keccak256": "0xf31f834ad985a2976d91b68a1c4edf926a9fe09b8e161eadf99adbaf2c1235c7",
+			"urls": [
+				"bzz-raw://a13192953dfa5e6419a91b21abad877577e4df17814037029cb69578bd03814e",
+				"dweb:/ipfs/QmfLS1iw6SNFBvXkKj9qHkZ8P4Dp7mjKQaV7JAAjtvthTq"
+			]
+		},
+		"IAccounts.sol": {
+			"keccak256": "0xa05af846fa72b278f6dae96684f5e99f2abdcc5ce6753d83de77b1d277e7bbc9",
+			"urls": [
+				"bzz-raw://9f3327064a130e183692cb2ef068c295fddb087d108c5d7449baa0ae01f578d0",
+				"dweb:/ipfs/QmTuNSE1FYETqt3MUvd2xE4fhVVhxzYFqUF54pgpMctN5B"
+			]
+		},
+		"IElection.sol": {
+			"keccak256": "0x6b2d3908ee7df3b4aa43b10a5f463d554631ef739b87dd79cef6894eee8965fd",
+			"urls": [
+				"bzz-raw://945a1c42329f85082c14cd8367c1bd08526f7503ac2e67a09126416dc988e36f",
+				"dweb:/ipfs/QmX4UdjHLseJaQS1Zz42yGUEnGwFD9BiJ5MQH6kzPD7f9E"
+			]
+		},
+		"ILockedGold.sol": {
+			"keccak256": "0x22562c31312723af9d6e9a4856d34bc500689186ec1bbe0facc8ab52500b8ff1",
+			"urls": [
+				"bzz-raw://ec9407b1b03b664b4a9d13cd83290c5329c59678dff74e2f8184fcc6fdaa536e",
+				"dweb:/ipfs/QmfGyU4WfYbeWC4gZjTRiwruFhAQaLFU3iXJHocTVho1Ct"
+			]
+		},
+		"IRegistry.sol": {
+			"keccak256": "0x83c12b6395bdac8526cad7e1089cfd70f31f8582333cbb4c1c94d755f9b0ffa2",
+			"urls": [
+				"bzz-raw://ba7781680b68887d2ab7c923e1f86a05c0091d75cd401de48a26b894f6483225",
+				"dweb:/ipfs/QmQS1jzBHy67CZJCTkowRUhFgGbNaFavh9zV7KytRYiQpQ"
+			]
+		},
+		"IValidators.sol": {
+			"keccak256": "0x66d153d77fdfe6a468e9aa5feb069528f4bf694fca8ffd615a5f60a89c5ba4c2",
+			"urls": [
+				"bzz-raw://35530096df2c626c616fa207a3ffe93f1cd6768d3729421615d97c6e049f52d1",
+				"dweb:/ipfs/Qmc1r4dzUaQFQCdQ3wR96EvppqgPa7xXZHMajnzWywBYm3"
+			]
+		},
+		"IValidators2.sol": {
+			"keccak256": "0x0859896e22452023c78e41a469fc327422a1a26a2b6622350c04333399c9b894",
+			"urls": [
+				"bzz-raw://343d790a9490cab5a910d6194770a677178afd047b3ade2d27faa5fc636d6b62",
+				"dweb:/ipfs/QmT9GXVXrMi4maAj13ABohojSpM3LJUxzT8pV8aFSG6zhF"
+			]
+		},
+		"Initializable.sol": {
+			"keccak256": "0x83419175e397c0df7bf4657451fae81bad4ef97f3ff7b5e9823bad2b19777c77",
+			"urls": [
+				"bzz-raw://e75bf4255c6a635b802cff1eb914e3e72d7fbf19a267eb25e6c866a30099686d",
+				"dweb:/ipfs/QmWm3GQoHtbGKdA8b7eiXoR9v9KJDEcGz52tzeTmocYqPC"
+			]
+		},
+		"Validators.sol": {
+			"keccak256": "0xdb9cded026a6410ffa24c59758f0abbed7ce437dfb24f98df2e28904de19cc0e",
+			"urls": [
+				"bzz-raw://7e921585e2ddadf56f47c3168e9b71b271f23dd0c01299c80f386912200417ed",
+				"dweb:/ipfs/Qme1SeUmbPKeih7EEvJGy1JPmcQLBX4KCtr5sjC2xCjwrZ"
+			]
+		},
+		"openzeppelin-solidity/contracts/GSN/Context.sol": {
+			"keccak256": "0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061",
+			"urls": [
+				"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436",
+				"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG"
+			]
+		},
+		"openzeppelin-solidity/contracts/math/Math.sol": {
+			"keccak256": "0x4b5aa451e4e8801478708f94b118a7821c0500d676255eaf89fc78c14856ce4e",
+			"urls": [
+				"bzz-raw://bed15b3f35ed05505efc8fb5cb01d06c52230fbcaadf4ed24a85b1ac2f15f33c",
+				"dweb:/ipfs/QmS6tW81u8E4tvzVfVuqEuMCkdwAozQ6pKJPRBR4JEVmQp"
+			]
+		},
+		"openzeppelin-solidity/contracts/ownership/Ownable.sol": {
+			"keccak256": "0x6fb9d7889769d7cc161225f9ef7a90e468ba9788b253816f8d8b6894d3472c24",
+			"urls": [
+				"bzz-raw://cf4c00fc3c37cc5acf0c82ec6fd97bab67d72c2567fdc0ebf023d9c09b30a08e",
+				"dweb:/ipfs/Qmb7TChG6DsEDX7LooJ4vmxot19f7VXX8S1zUGPeJTWbwZ"
+			]
+		}
+	},
+	"version": 1
+}

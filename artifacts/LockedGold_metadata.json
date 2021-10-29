@@ -1,0 +1,1155 @@
+{
+	"compiler": {
+		"version": "0.5.13+commit.5b0b510c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "test",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "slashed",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "penalty",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "reporter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					}
+				],
+				"name": "AccountSlashed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "GoldLocked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "GoldRelocked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "available",
+						"type": "uint256"
+					}
+				],
+				"name": "GoldUnlocked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "GoldWithdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					}
+				],
+				"name": "RegistrySet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "slasherIdentifier",
+						"type": "string"
+					}
+				],
+				"name": "SlasherWhitelistAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "slasherIdentifier",
+						"type": "string"
+					}
+				],
+				"name": "SlasherWhitelistRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "period",
+						"type": "uint256"
+					}
+				],
+				"name": "UnlockingPeriodSet",
+				"type": "event"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "slasherIdentifier",
+						"type": "string"
+					}
+				],
+				"name": "addSlasher",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nonvoting",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "decrementNonvotingAccountBalance",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getAccountNonvotingLockedGold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getAccountTotalLockedGold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getNonvotingLockedGold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getPendingWithdrawals",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getSlashingWhitelist",
+				"outputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "",
+						"type": "bytes32[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getTotalLockedGold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getTotalPendingWithdrawals",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getVersionNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "incrementNonvotingAccountBalance",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_unlockingPeriod",
+						"type": "uint256"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "initialized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "slasher",
+						"type": "address"
+					}
+				],
+				"name": "isSlasher",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "lock",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "registry",
+				"outputs": [
+					{
+						"internalType": "contract IRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "relock",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "slasherIdentifier",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "removeSlasher",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					}
+				],
+				"name": "setRegistry",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "setUnlockingPeriod",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "penalty",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "reporter",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address[]",
+						"name": "lessers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "greaters",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "indices",
+						"type": "uint256[]"
+					}
+				],
+				"name": "slash",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "slashingWhitelist",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "totalNonvoting",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "unlock",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "unlockingPeriod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"addSlasher(string)": {
+					"params": {
+						"slasherIdentifier": "Identifier to whitelist."
+					}
+				},
+				"constructor": {
+					"params": {
+						"test": "Set to true to skip implementation initialization"
+					}
+				},
+				"getAccountNonvotingLockedGold(address)": {
+					"params": {
+						"account": "The account."
+					},
+					"return": "The total amount of non-voting locked gold for an account."
+				},
+				"getAccountTotalLockedGold(address)": {
+					"params": {
+						"account": "The account."
+					},
+					"return": "The total amount of locked gold for an account."
+				},
+				"getNonvotingLockedGold()": {
+					"return": "The total amount of locked gold not being used to vote in elections."
+				},
+				"getPendingWithdrawals(address)": {
+					"params": {
+						"account": "The address of the account."
+					},
+					"return": "The value and timestamp for each pending withdrawal."
+				},
+				"getTotalPendingWithdrawals(address)": {
+					"params": {
+						"account": "The address of the account."
+					},
+					"return": "Total amount to withdraw."
+				},
+				"getVersionNumber()": {
+					"return": "The storage, major, minor, and patch version of the contract."
+				},
+				"incrementNonvotingAccountBalance(address,uint256)": {
+					"details": "Can only be called by the registered Election smart contract.",
+					"params": {
+						"account": "The account whose non-voting balance should be incremented.",
+						"value": "The amount by which to increment."
+					}
+				},
+				"initialize(address,uint256)": {
+					"params": {
+						"_unlockingPeriod": "The unlocking period in seconds.",
+						"registryAddress": "The address of the registry core smart contract."
+					}
+				},
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"relock(uint256,uint256)": {
+					"params": {
+						"index": "The index of the pending withdrawal to relock from.",
+						"value": "The value to relock from the specified pending withdrawal."
+					}
+				},
+				"removeSlasher(string,uint256)": {
+					"params": {
+						"index": "Index of the provided identifier in slashingWhiteList array.",
+						"slasherIdentifier": "Identifier to remove from whitelist."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setRegistry(address)": {
+					"params": {
+						"registryAddress": "The address of a registry contract for routing to other contracts."
+					}
+				},
+				"setUnlockingPeriod(uint256)": {
+					"params": {
+						"value": "The unlocking period in seconds."
+					}
+				},
+				"slash(address,uint256,address,uint256,address[],address[],uint256[])": {
+					"details": "Fails if `reward` is greater than `account`'s total locked gold.",
+					"params": {
+						"account": "Address of account being slashed.",
+						"greaters": "The groups receiving more votes than the i'th group, or 0 if the i'th group                has the most votes of any validator group.",
+						"indices": "The indices of the i'th group in `account`'s voting list.",
+						"lessers": "The groups receiving fewer votes than i'th group, or 0 if the i'th group has               the fewest votes of any validator group.",
+						"penalty": "Amount to slash account.",
+						"reporter": "Address of account reporting the slasher.",
+						"reward": "Reward to give reporter."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"unlock(uint256)": {
+					"params": {
+						"value": "The amount of gold to unlock."
+					}
+				},
+				"withdraw(uint256)": {
+					"params": {
+						"index": "The index of the pending withdrawal to withdraw."
+					}
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {
+				"addSlasher(string)": {
+					"notice": "Adds `slasher` to whitelist of approved slashing addresses."
+				},
+				"constructor": "Sets initialized == true on implementation contracts",
+				"decrementNonvotingAccountBalance(address,uint256)": {
+					"notice": "减少账户余额"
+				},
+				"getAccountNonvotingLockedGold(address)": {
+					"notice": "Returns the total amount of non-voting locked gold for an account."
+				},
+				"getAccountTotalLockedGold(address)": {
+					"notice": "Returns the total amount of locked gold for an account."
+				},
+				"getNonvotingLockedGold()": {
+					"notice": "Returns the total amount of locked gold not being used to vote in elections."
+				},
+				"getPendingWithdrawals(address)": {
+					"notice": "Returns the pending withdrawals from unlocked gold for an account."
+				},
+				"getTotalLockedGold()": {
+					"notice": "notice返回系统中锁定的黄金总量。请注意，这不包括 ײ解锁但尚未提取的黄金。 返回系统中锁定的黄金总量。"
+				},
+				"getTotalPendingWithdrawals(address)": {
+					"notice": "Returns the total amount to withdraw from unlocked gold for an account."
+				},
+				"getVersionNumber()": {
+					"notice": "Returns the storage, major, minor, and patch version of the contract."
+				},
+				"incrementNonvotingAccountBalance(address,uint256)": {
+					"notice": "Increments the non-voting balance for an account."
+				},
+				"initialize(address,uint256)": {
+					"notice": "Used in place of the constructor to allow the contract to be upgradable via proxy."
+				},
+				"lock()": {
+					"notice": "Locks gold to be used for voting."
+				},
+				"relock(uint256,uint256)": {
+					"notice": "Relocks gold that has been unlocked but not withdrawn."
+				},
+				"removeSlasher(string,uint256)": {
+					"notice": "Removes `slasher` from whitelist of approved slashing addresses."
+				},
+				"setRegistry(address)": {
+					"notice": "Updates the address pointing to a Registry contract."
+				},
+				"setUnlockingPeriod(uint256)": {
+					"notice": "Sets the duration in seconds users must wait before withdrawing gold after unlocking."
+				},
+				"slash(address,uint256,address,uint256,address[],address[],uint256[])": {
+					"notice": "Slashes `account` by reducing its nonvoting locked gold by `penalty`.        If there is not enough nonvoting locked gold to slash, calls into        `Election.slashVotes` to slash the remaining gold. If `account` does not have        `penalty` worth of locked gold, slashes `account`'s total locked gold.        Also sends `reward` gold to the reporter, and penalty-reward to the Community Fund."
+				},
+				"unlock(uint256)": {
+					"notice": "Unlocks gold that becomes withdrawable after the unlocking period."
+				},
+				"withdraw(uint256)": {
+					"notice": "Withdraws gold that has been unlocked after the unlocking period has passed."
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"LockedGold.sol": "LockedGold"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"IAccounts.sol": {
+			"keccak256": "0xa05af846fa72b278f6dae96684f5e99f2abdcc5ce6753d83de77b1d277e7bbc9",
+			"urls": [
+				"bzz-raw://9f3327064a130e183692cb2ef068c295fddb087d108c5d7449baa0ae01f578d0",
+				"dweb:/ipfs/QmTuNSE1FYETqt3MUvd2xE4fhVVhxzYFqUF54pgpMctN5B"
+			]
+		},
+		"IAttestations.sol": {
+			"keccak256": "0x305e1bb4bf491a820aa4cfced9aca908d4c220967b439894394cdc7b9158d83b",
+			"urls": [
+				"bzz-raw://0a0fcba61aa42fb65bfaeb370183ba5b97845dd0008a5c695e1fea26be14938f",
+				"dweb:/ipfs/QmZ46QVJ61L46t3CvaQYndqcbbrMqp8tvD6py6mCGhVfqn"
+			]
+		},
+		"ICeloVersionedContract.sol": {
+			"keccak256": "0x268f04dfd1a26c34809ef8fa308397e26edef0c248fd74a646401e62fd5ef6d0",
+			"urls": [
+				"bzz-raw://b07b17e7dd4bdfa78dc51acc2a6290ad789c9c16d66a511ee40037bdc7ed80ad",
+				"dweb:/ipfs/QmaY99NSJKBhL8N9MPod89tu5oKxDkikHPWhQLLV8Sghdr"
+			]
+		},
+		"IElection.sol": {
+			"keccak256": "0x6b2d3908ee7df3b4aa43b10a5f463d554631ef739b87dd79cef6894eee8965fd",
+			"urls": [
+				"bzz-raw://945a1c42329f85082c14cd8367c1bd08526f7503ac2e67a09126416dc988e36f",
+				"dweb:/ipfs/QmX4UdjHLseJaQS1Zz42yGUEnGwFD9BiJ5MQH6kzPD7f9E"
+			]
+		},
+		"IExchange.sol": {
+			"keccak256": "0x3e5c662ac26136ab5682c76dc9ffdc47935f4c632f76cb1f05b575c788d219ac",
+			"urls": [
+				"bzz-raw://cfedba731377c5ea1c6395dce4f8eeee67cb01f1c7d1f28b776f734758685cae",
+				"dweb:/ipfs/QmU3bkRPFYFAdkcFWZqBVwdmGE1c3oPVvh6cfmfzG9DyxT"
+			]
+		},
+		"IFeeCurrencyWhitelist.sol": {
+			"keccak256": "0xd6cd73469293b2a8005963d006b43610bea2fc60e155ba9c0ae42fb44ad7d5c7",
+			"urls": [
+				"bzz-raw://500d954f5282ff38b7d913b0b5c5de4b01d60b90b687e3f1cd8c9dcefb332e9c",
+				"dweb:/ipfs/Qmd2j3EGkivcCeSCdqp63srkb8pqncT1cwEPGe3La4opp6"
+			]
+		},
+		"IFreezer.sol": {
+			"keccak256": "0x78ff39ccff90a9a0f34adfe9fc6b749f62a3aa75f4dc9959fd572819a922a0e0",
+			"urls": [
+				"bzz-raw://a5754951f4b3d3c4facae83ea585f6a07933e1d4e5cf7ba8d5c197585dd10a9b",
+				"dweb:/ipfs/Qmd2MD6Sn1DGJ6438N2gqXwuajhSYsWRUpp5Q7c3EjF94k"
+			]
+		},
+		"IGovernance.sol": {
+			"keccak256": "0xd321dd92bd547d6aa56003c3b61e739363d05e80717259c9caf980128ee72e1a",
+			"urls": [
+				"bzz-raw://c7f7fdb5509a6c77e5a99b718bf984a7e75683f92f3cd1cb94190122fbcd5472",
+				"dweb:/ipfs/QmbwKeHpVG6uTd5gk78PtfLGap9G9xYVYe4TAs3T7mR73X"
+			]
+		},
+		"ILockedGold.sol": {
+			"keccak256": "0x22562c31312723af9d6e9a4856d34bc500689186ec1bbe0facc8ab52500b8ff1",
+			"urls": [
+				"bzz-raw://ec9407b1b03b664b4a9d13cd83290c5329c59678dff74e2f8184fcc6fdaa536e",
+				"dweb:/ipfs/QmfGyU4WfYbeWC4gZjTRiwruFhAQaLFU3iXJHocTVho1Ct"
+			]
+		},
+		"IRandom.sol": {
+			"keccak256": "0x612bab8f318220a22c19a15ddff1fda35ece21137b1d1b68c5c0ae1feb76afc8",
+			"urls": [
+				"bzz-raw://9996ffd57ff98f9eb8d3f0fb0318e76a18990bdfa19cfc6d09dd68f474bed464",
+				"dweb:/ipfs/QmRNEY14DxkVnBaQdUdq6ZJjr6WiK9PjeSXAPSutLvLY1S"
+			]
+		},
+		"IRegistry.sol": {
+			"keccak256": "0x83c12b6395bdac8526cad7e1089cfd70f31f8582333cbb4c1c94d755f9b0ffa2",
+			"urls": [
+				"bzz-raw://ba7781680b68887d2ab7c923e1f86a05c0091d75cd401de48a26b894f6483225",
+				"dweb:/ipfs/QmQS1jzBHy67CZJCTkowRUhFgGbNaFavh9zV7KytRYiQpQ"
+			]
+		},
+		"IReserve.sol": {
+			"keccak256": "0x407e13dade065bb44532ed1910124cd48676b5b1aecae6826c6e5bb0972bff6b",
+			"urls": [
+				"bzz-raw://620f461bd98c3eeaf71665ac73a0b4c3ec7b7a5ec9e03431fc223c2fa84c62c0",
+				"dweb:/ipfs/QmT3PGje4ZdcomUwxGPD3yF23BT8uUDVUtpep6MF7zsmHs"
+			]
+		},
+		"ISortedOracles.sol": {
+			"keccak256": "0x459e25b4ef7b19f3db98eb2cf4801d5ffcb0d03911096b48f296d260a4d34525",
+			"urls": [
+				"bzz-raw://50aeff4147c83e9db6180a071beb2bfe8023bb3e528657b14bb1338d0133f743",
+				"dweb:/ipfs/QmQ5ptH44pJ58VUg4PdSSnuJUT4CQfK8cdBTH9tRbZVyL1"
+			]
+		},
+		"IStableToken.sol": {
+			"keccak256": "0x502ddada8a10a08abb2170e63ea9db8cfcb5f50b814c264c7eab2138f79c96c2",
+			"urls": [
+				"bzz-raw://8bbbf253ad19d5c2ee43f44e58d51fe3cdcf987eec04dac44c8ded060a0506fd",
+				"dweb:/ipfs/QmTqHHeSMUpuNE6GyMeGYT6CY3CwW9ZKUXoCawpVovBCuv"
+			]
+		},
+		"IValidators.sol": {
+			"keccak256": "0x66d153d77fdfe6a468e9aa5feb069528f4bf694fca8ffd615a5f60a89c5ba4c2",
+			"urls": [
+				"bzz-raw://35530096df2c626c616fa207a3ffe93f1cd6768d3729421615d97c6e049f52d1",
+				"dweb:/ipfs/Qmc1r4dzUaQFQCdQ3wR96EvppqgPa7xXZHMajnzWywBYm3"
+			]
+		},
+		"Initializable.sol": {
+			"keccak256": "0x83419175e397c0df7bf4657451fae81bad4ef97f3ff7b5e9823bad2b19777c77",
+			"urls": [
+				"bzz-raw://e75bf4255c6a635b802cff1eb914e3e72d7fbf19a267eb25e6c866a30099686d",
+				"dweb:/ipfs/QmWm3GQoHtbGKdA8b7eiXoR9v9KJDEcGz52tzeTmocYqPC"
+			]
+		},
+		"LockedGold.sol": {
+			"keccak256": "0xf104ed42ffa95fccd50fe0fe3161dab52797d25405648b1b2ba96ae8f86eba15",
+			"urls": [
+				"bzz-raw://112e44519431a476d31233b12d0699449888c61df37d8dc222e15e88c0b73e8f",
+				"dweb:/ipfs/QmXisz214RvtzvD6jM9AsxsjzNtpLxdqzcJStCaSGwxaWY"
+			]
+		},
+		"ReentrancyGuard.sol": {
+			"keccak256": "0x17c28fd7feef362be94f535042d8d16dac211f93c82eaa1575e7c9f1c8d0b9f6",
+			"urls": [
+				"bzz-raw://b5578f631189b8b2eb10fc60660c1e0d2f159dad5df67054c65c166c9c4338f2",
+				"dweb:/ipfs/QmdiC7WsNgvungHaL7F9ML2Vrd7NZYjBWnVQ9Aaow2JBUA"
+			]
+		},
+		"Signatures.sol": {
+			"keccak256": "0xf3cabb5f4cf73b208a0f34e9696cb08f8d5d0993cb15a2a54e27cc6eeede7c09",
+			"urls": [
+				"bzz-raw://6e49f5df4bc320c30af7c7179781d873c072d6835c31c99e16eb4a608f713e9c",
+				"dweb:/ipfs/QmVXqtELbT3SdtKERmro52yktHXZMo1TAKTBMQdAJijw6Q"
+			]
+		},
+		"UsingRegistry.sol": {
+			"keccak256": "0xc1121c46fbf126543c615e8e9dfd8c52930cf3d5096bc026844d4515976dd680",
+			"urls": [
+				"bzz-raw://c6ed07874ac624f81d4bd64366256019ac136b82b98f997e9e2091a00be6df22",
+				"dweb:/ipfs/QmPokHq7VbpHDQDt9uiHL3eKHm9B99UCN8EAFt3SRAtV9n"
+			]
+		},
+		"openzeppelin-solidity/contracts/GSN/Context.sol": {
+			"keccak256": "0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061",
+			"urls": [
+				"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436",
+				"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG"
+			]
+		},
+		"openzeppelin-solidity/contracts/cryptography/ECDSA.sol": {
+			"keccak256": "0xc89ea7e48ba477b1781b24ae963442fff1bb2af33b6178dad679a3fa2f5ab2de",
+			"urls": [
+				"bzz-raw://b736ddad8143f8f1cd13c20809d4ebce5f5a8c7725081b0b703294078bd506d1",
+				"dweb:/ipfs/QmdhTWCXFCuwG9JaPMjwnhkQoDj9su8R7KMPNvD5z9KeWD"
+			]
+		},
+		"openzeppelin-solidity/contracts/math/Math.sol": {
+			"keccak256": "0x4b5aa451e4e8801478708f94b118a7821c0500d676255eaf89fc78c14856ce4e",
+			"urls": [
+				"bzz-raw://bed15b3f35ed05505efc8fb5cb01d06c52230fbcaadf4ed24a85b1ac2f15f33c",
+				"dweb:/ipfs/QmS6tW81u8E4tvzVfVuqEuMCkdwAozQ6pKJPRBR4JEVmQp"
+			]
+		},
+		"openzeppelin-solidity/contracts/math/SafeMath.sol": {
+			"keccak256": "0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076",
+			"urls": [
+				"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f",
+				"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq"
+			]
+		},
+		"openzeppelin-solidity/contracts/ownership/Ownable.sol": {
+			"keccak256": "0x6fb9d7889769d7cc161225f9ef7a90e468ba9788b253816f8d8b6894d3472c24",
+			"urls": [
+				"bzz-raw://cf4c00fc3c37cc5acf0c82ec6fd97bab67d72c2567fdc0ebf023d9c09b30a08e",
+				"dweb:/ipfs/Qmb7TChG6DsEDX7LooJ4vmxot19f7VXX8S1zUGPeJTWbwZ"
+			]
+		},
+		"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9",
+			"urls": [
+				"bzz-raw://59fd025151435da35faa8093a5c7a17de02de9d08ad27275c5cdf05050820d91",
+				"dweb:/ipfs/QmQMvwEcPhoRXzbXyrdoeRtvLoifUW9Qh7Luho7bmUPRkc"
+			]
+		},
+		"openzeppelin-solidity/contracts/utils/Address.sol": {
+			"keccak256": "0x1a8e5072509c5ea7365eb1d48030b9be865140c8fb779968da0a459a0e174a11",
+			"urls": [
+				"bzz-raw://03335b7b07c7c8c8d613cfdd8ec39a0b5ec133ee510bf2fe6cc5a496767bef4b",
+				"dweb:/ipfs/Qmebp4nzPja645c9yXSdJkGq96oU3am3LUnG2K3R7XxyKf"
+			]
+		}
+	},
+	"version": 1
+}
