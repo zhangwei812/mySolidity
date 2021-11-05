@@ -696,7 +696,8 @@ IValidators2
     }
 
     struct membersinfo {
-        mapping(address => bool) member;
+        address[] list;
+        mapping(address => uint256) member;//address  index
         uint256 numElements;
     }
 
@@ -792,7 +793,7 @@ IValidators2
         if (validator.affiliation != address(0)) {
             // 1.是组成员不能注销
             require(
-                !(groups[validator.affiliation].members.member[account]),
+                !(groups[validator.affiliation].members.member[account] > 0),
                 "Has been group member recently"
             );
         }
@@ -879,13 +880,16 @@ IValidators2
     }
 
     function addMember(address validator) external returns (bool) {
-        address account = getAccounts().validatorSignerToAccount(msg.sender);
+        address account = msg.sender;
         ValidatorGroup storage _group = groups[account];
+        _group.members.list.push(validator);
+        _group.members.member[validator] = _group.members.list.length - 1;
         _group.members.numElements.add(1);
-        _group.members.member[validator] = true;
+        
+        log("addMember",_group.members.list.length);
+        log("addMember",validator);
         return true;
     }
-
 
 
     function removeMember(address validator) external returns (bool) {
@@ -939,15 +943,16 @@ IValidators2
     function _removeMember(address group, address validator) private returns (bool) {
         ValidatorGroup storage _group = groups[group];
         require(validators[validator].affiliation == group, "Not affiliated to group");
-        require((_group.members.member[validator]==true), "Not a member of the group");
-        _group.members.member[validator]==false;
+        deleteElement(_group.members.list, validator, _group.members.member[validator]);
+        delete (_group.members.member[validator]);
         uint256 numMembers = _group.members.numElements;
         // Empty validator groups are not electable.
         if (numMembers == 0) {
             getElection().markGroupIneligible(group);
-            return true ;
         }
+        _group.members.list[_group.members.numElements] == address(0);
         _group.members.numElements.sub(1);
+
         return true;
     }
 
@@ -1004,9 +1009,8 @@ IValidators2
     {
         address affiliation = validator.affiliation;
         ValidatorGroup storage group = groups[affiliation];
-        if (group.members.member[validatorAccount]) {
-            group.members.member[validatorAccount] = false;
-        }
+        deleteElement(group.members.list, validatorAccount, group.members.member[validatorAccount]);
+        delete (group.members.member[validatorAccount]);
         validator.affiliation = address(0);
         return true;
     }
@@ -1021,9 +1025,6 @@ IValidators2
     view
     returns (address[] memory)
     {
-        address[] memory arr;
-        arr = new address[](1);
-        arr[0] = msg.sender;
-        return arr;
+        return groups[account].members.list;
     }
 }
