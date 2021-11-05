@@ -695,6 +695,7 @@ IValidators2
         uint256 duration;
     }
 
+
     struct membersinfo {
         address[] list;
         mapping(address => uint256) member;//address  index
