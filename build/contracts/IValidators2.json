@@ -26,27 +26,42 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getFirstGroupValidators",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"getGroupValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IValidators2.sol\":\"IValidators2\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IValidators2.sol\":{\"keccak256\":\"0x0859896e22452023c78e41a469fc327422a1a26a2b6622350c04333399c9b894\",\"urls\":[\"bzz-raw://343d790a9490cab5a910d6194770a677178afd047b3ade2d27faa5fc636d6b62\",\"dweb:/ipfs/QmT9GXVXrMi4maAj13ABohojSpM3LJUxzT8pV8aFSG6zhF\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getFirstGroupValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"getGroupValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IValidators2.sol\":\"IValidators2\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IValidators2.sol\":{\"keccak256\":\"0xcdce118e43331ebfa8dd082a28d6f0f251d1fed527ce07ee63b5bb139beb0a5e\",\"urls\":[\"bzz-raw://9a14de97e5e518ba3d61bc38f38dba82a5e223d5ae6d41c87afbca8497a43be5\",\"dweb:/ipfs/QmUC71kyaQc4TMaNB1HZ8UtkaEddiskGPem2QaK7jPFmVG\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.13;\r\n\r\ninterface IValidators2 {\r\n\r\n  function getGroupValidators(address, uint256) external view returns (address[] memory);\r\n\r\n\r\n}\r\n",
+  "source": "pragma solidity ^0.5.13;\r\n\r\ninterface IValidators2 {\r\n\r\n  function getGroupValidators(address, uint256) external view returns (address[] memory);\r\n  function getFirstGroupValidators() external view returns (address[] memory);\r\n\r\n}\r\n",
   "sourcePath": "D:\\work\\zhangwei812\\mySolidity\\mySolidity\\contracts\\IValidators2.sol",
   "ast": {
     "absolutePath": "project:/contracts/IValidators2.sol",
     "exportedSymbols": {
       "IValidators2": [
-        4065
+        4103
       ]
     },
-    "id": 4066,
+    "id": 4104,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4054,
+        "id": 4086,
         "literals": [
           "solidity",
           "^",
@@ -62,9 +77,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 4065,
+        "id": 4103,
         "linearizedBaseContracts": [
-          4065
+          4103
         ],
         "name": "IValidators2",
         "nodeType": "ContractDefinition",
@@ -72,22 +87,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 4064,
+            "id": 4096,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getGroupValidators",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4059,
+              "id": 4091,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4056,
+                  "id": 4088,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4064,
+                  "scope": 4096,
                   "src": "86:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -96,7 +111,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4055,
+                    "id": 4087,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "86:7:21",
@@ -111,10 +126,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 4058,
+                  "id": 4090,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4064,
+                  "scope": 4096,
                   "src": "95:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -123,7 +138,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4057,
+                    "id": 4089,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "95:7:21",
@@ -139,15 +154,15 @@
               "src": "85:18:21"
             },
             "returnParameters": {
-              "id": 4063,
+              "id": 4095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4062,
+                  "id": 4094,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4064,
+                  "scope": 4096,
                   "src": "127:16:21",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -157,7 +172,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 4060,
+                      "id": 4092,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "127:7:21",
@@ -167,7 +182,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 4061,
+                    "id": 4093,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "127:9:21",
@@ -182,25 +197,90 @@
               ],
               "src": "126:18:21"
             },
-            "scope": 4065,
+            "scope": 4103,
             "src": "58:87:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4102,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFirstGroupValidators",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4097,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "181:2:21"
+            },
+            "returnParameters": {
+              "id": 4101,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4100,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4102,
+                  "src": "207:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4098,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "207:7:21",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 4099,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "207:9:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "206:18:21"
+            },
+            "scope": 4103,
+            "src": "149:76:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 4066,
-        "src": "28:124:21"
+        "scope": 4104,
+        "src": "28:202:21"
       }
     ],
-    "src": "0:154:21"
+    "src": "0:232:21"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/IValidators2.sol",
       "exportedSymbols": {
         "IValidators2": [
-          4065
+          4103
         ]
       }
     },
@@ -214,7 +294,7 @@
             ".13"
           ]
         },
-        "id": 4054,
+        "id": 4086,
         "name": "PragmaDirective",
         "src": "0:24:21"
       },
@@ -230,10 +310,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            4065
+            4103
           ],
           "name": "IValidators2",
-          "scope": 4066
+          "scope": 4104
         },
         "children": [
           {
@@ -247,7 +327,7 @@
                 null
               ],
               "name": "getGroupValidators",
-              "scope": 4065,
+              "scope": 4103,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -259,7 +339,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 4064,
+                      "scope": 4096,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -273,12 +353,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 4055,
+                        "id": 4087,
                         "name": "ElementaryTypeName",
                         "src": "86:7:21"
                       }
                     ],
-                    "id": 4056,
+                    "id": 4088,
                     "name": "VariableDeclaration",
                     "src": "86:7:21"
                   },
@@ -286,7 +366,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 4064,
+                      "scope": 4096,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -299,17 +379,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 4057,
+                        "id": 4089,
                         "name": "ElementaryTypeName",
                         "src": "95:7:21"
                       }
                     ],
-                    "id": 4058,
+                    "id": 4090,
                     "name": "VariableDeclaration",
                     "src": "95:7:21"
                   }
                 ],
-                "id": 4059,
+                "id": 4091,
                 "name": "ParameterList",
                 "src": "85:18:21"
               },
@@ -319,7 +399,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 4064,
+                      "scope": 4096,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "address[]",
@@ -339,39 +419,117 @@
                               "stateMutability": "nonpayable",
                               "type": "address"
                             },
-                            "id": 4060,
+                            "id": 4092,
                             "name": "ElementaryTypeName",
                             "src": "127:7:21"
                           }
                         ],
-                        "id": 4061,
+                        "id": 4093,
                         "name": "ArrayTypeName",
                         "src": "127:9:21"
                       }
                     ],
-                    "id": 4062,
+                    "id": 4094,
                     "name": "VariableDeclaration",
                     "src": "127:16:21"
                   }
                 ],
-                "id": 4063,
+                "id": 4095,
                 "name": "ParameterList",
                 "src": "126:18:21"
               }
             ],
-            "id": 4064,
+            "id": 4096,
             "name": "FunctionDefinition",
             "src": "58:87:21"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFirstGroupValidators",
+              "scope": 4103,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4097,
+                "name": "ParameterList",
+                "src": "181:2:21"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 4102,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "address[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 4098,
+                            "name": "ElementaryTypeName",
+                            "src": "207:7:21"
+                          }
+                        ],
+                        "id": 4099,
+                        "name": "ArrayTypeName",
+                        "src": "207:9:21"
+                      }
+                    ],
+                    "id": 4100,
+                    "name": "VariableDeclaration",
+                    "src": "207:16:21"
+                  }
+                ],
+                "id": 4101,
+                "name": "ParameterList",
+                "src": "206:18:21"
+              }
+            ],
+            "id": 4102,
+            "name": "FunctionDefinition",
+            "src": "149:76:21"
           }
         ],
-        "id": 4065,
+        "id": 4103,
         "name": "ContractDefinition",
-        "src": "28:124:21"
+        "src": "28:202:21"
       }
     ],
-    "id": 4066,
+    "id": 4104,
     "name": "SourceUnit",
-    "src": "0:154:21"
+    "src": "0:232:21"
   },
   "compiler": {
     "name": "solc",
@@ -379,7 +537,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-05T08:07:35.970Z",
+  "updatedAt": "2021-11-05T11:19:21.277Z",
   "devdoc": {
     "methods": {}
   },

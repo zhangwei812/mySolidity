@@ -690,14 +690,14 @@
     "absolutePath": "project:/contracts/openzeppelin-solidity/contracts/GSN/IRelayHub.sol",
     "exportedSymbols": {
       "IRelayHub": [
-        11488
+        11541
       ]
     },
-    "id": 11489,
+    "id": 11542,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 11237,
+        "id": 11290,
         "literals": [
           "solidity",
           "^",
@@ -713,9 +713,9 @@
         "contractKind": "interface",
         "documentation": "@dev Interface for `RelayHub`, the core contract of the GSN. Users should not need to interact with this contract\ndirectly.\n * See the https://github.com/OpenZeppelin/openzeppelin-gsn-helpers[OpenZeppelin GSN helpers] for more information on\nhow to deploy an instance of `RelayHub` on your local test network.",
         "fullyImplemented": false,
-        "id": 11488,
+        "id": 11541,
         "linearizedBaseContracts": [
-          11488
+          11541
         ],
         "name": "IRelayHub",
         "nodeType": "ContractDefinition",
@@ -723,22 +723,22 @@
           {
             "body": null,
             "documentation": "@dev Adds stake to a relay and sets its `unstakeDelay`. If the relay does not exist, it is created, and the caller\nof this function becomes its owner. If the relay already exists, only the owner can call this function. A relay\ncannot be its own owner.\n     * All Ether in this function call will be added to the relay's stake.\nIts unstake delay will be assigned to `unstakeDelay`, but the new value must be greater or equal to the current one.\n     * Emits a {Staked} event.",
-            "id": 11244,
+            "id": 11297,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "stake",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11242,
+              "id": 11295,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11239,
+                  "id": 11292,
                   "name": "relayaddr",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11244,
+                  "scope": 11297,
                   "src": "954:17:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -747,7 +747,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11238,
+                    "id": 11291,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "954:7:64",
@@ -762,10 +762,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11241,
+                  "id": 11294,
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11244,
+                  "scope": 11297,
                   "src": "973:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -774,7 +774,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11240,
+                    "id": 11293,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "973:7:64",
@@ -790,12 +790,12 @@
               "src": "953:41:64"
             },
             "returnParameters": {
-              "id": 11243,
+              "id": 11296,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1011:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "939:73:64",
             "stateMutability": "payable",
             "superFunction": null,
@@ -804,20 +804,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when a relay's stake or unstakeDelay are increased",
-            "id": 11252,
+            "id": 11305,
             "name": "Staked",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11251,
+              "id": 11304,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11246,
+                  "id": 11299,
                   "indexed": true,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11252,
+                  "scope": 11305,
                   "src": "1118:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -826,7 +826,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11245,
+                    "id": 11298,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1118:7:64",
@@ -841,11 +841,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11248,
+                  "id": 11301,
                   "indexed": false,
                   "name": "stake",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11252,
+                  "scope": 11305,
                   "src": "1141:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -854,7 +854,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11247,
+                    "id": 11300,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1141:7:64",
@@ -868,11 +868,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11250,
+                  "id": 11303,
                   "indexed": false,
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11252,
+                  "scope": 11305,
                   "src": "1156:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -881,7 +881,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11249,
+                    "id": 11302,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1156:7:64",
@@ -901,22 +901,22 @@
           {
             "body": null,
             "documentation": "@dev Registers the caller as a relay.\nThe relay must be staked for, and not be a contract (i.e. this function must be called directly from an EOA).\n     * This function can be called multiple times, emitting new {RelayAdded} events. Note that the received\n`transactionFee` is not enforced by {relayCall}.\n     * Emits a {RelayAdded} event.",
-            "id": 11259,
+            "id": 11312,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerRelay",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11257,
+              "id": 11310,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11254,
+                  "id": 11307,
                   "name": "transactionFee",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11259,
+                  "scope": 11312,
                   "src": "1598:22:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -925,7 +925,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11253,
+                    "id": 11306,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1598:7:64",
@@ -939,10 +939,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11256,
+                  "id": 11309,
                   "name": "url",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11259,
+                  "scope": 11312,
                   "src": "1622:19:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -951,7 +951,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 11255,
+                    "id": 11308,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1622:6:64",
@@ -967,12 +967,12 @@
               "src": "1597:45:64"
             },
             "returnParameters": {
-              "id": 11258,
+              "id": 11311,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1651:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "1575:77:64",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -981,20 +981,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when a relay is registered or re-registerd. Looking at these events (and filtering out\n{RelayRemoved} events) lets a client discover the list of available relays.",
-            "id": 11273,
+            "id": 11326,
             "name": "RelayAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11272,
+              "id": 11325,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11261,
+                  "id": 11314,
                   "indexed": true,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11273,
+                  "scope": 11326,
                   "src": "1881:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1003,7 +1003,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11260,
+                    "id": 11313,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1881:7:64",
@@ -1018,11 +1018,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11263,
+                  "id": 11316,
                   "indexed": true,
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11273,
+                  "scope": 11326,
                   "src": "1904:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1031,7 +1031,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11262,
+                    "id": 11315,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1904:7:64",
@@ -1046,11 +1046,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11265,
+                  "id": 11318,
                   "indexed": false,
                   "name": "transactionFee",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11273,
+                  "scope": 11326,
                   "src": "1927:22:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1059,7 +1059,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11264,
+                    "id": 11317,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1927:7:64",
@@ -1073,11 +1073,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11267,
+                  "id": 11320,
                   "indexed": false,
                   "name": "stake",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11273,
+                  "scope": 11326,
                   "src": "1951:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1086,7 +1086,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11266,
+                    "id": 11319,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1951:7:64",
@@ -1100,11 +1100,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11269,
+                  "id": 11322,
                   "indexed": false,
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11273,
+                  "scope": 11326,
                   "src": "1966:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1113,7 +1113,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11268,
+                    "id": 11321,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1966:7:64",
@@ -1127,11 +1127,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11271,
+                  "id": 11324,
                   "indexed": false,
                   "name": "url",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11273,
+                  "scope": 11326,
                   "src": "1988:10:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1140,7 +1140,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 11270,
+                    "id": 11323,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1988:6:64",
@@ -1160,22 +1160,22 @@
           {
             "body": null,
             "documentation": "@dev Removes (deregisters) a relay. Unregistered (but staked for) relays can also be removed.\n     * Can only be called by the owner of the relay. After the relay's `unstakeDelay` has elapsed, {unstake} will be\ncallable.\n     * Emits a {RelayRemoved} event.",
-            "id": 11278,
+            "id": 11331,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "removeRelayByOwner",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11276,
+              "id": 11329,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11275,
+                  "id": 11328,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11278,
+                  "scope": 11331,
                   "src": "2336:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1184,7 +1184,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11274,
+                    "id": 11327,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2336:7:64",
@@ -1201,12 +1201,12 @@
               "src": "2335:15:64"
             },
             "returnParameters": {
-              "id": 11277,
+              "id": 11330,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2359:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "2308:52:64",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1215,20 +1215,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when a relay is removed (deregistered). `unstakeTime` is the time when unstake will be callable.",
-            "id": 11284,
+            "id": 11337,
             "name": "RelayRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11283,
+              "id": 11336,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11280,
+                  "id": 11333,
                   "indexed": true,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11284,
+                  "scope": 11337,
                   "src": "2518:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1237,7 +1237,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11279,
+                    "id": 11332,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2518:7:64",
@@ -1252,11 +1252,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11282,
+                  "id": 11335,
                   "indexed": false,
                   "name": "unstakeTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11284,
+                  "scope": 11337,
                   "src": "2541:19:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1265,7 +1265,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11281,
+                    "id": 11334,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2541:7:64",
@@ -1285,22 +1285,22 @@
           {
             "body": null,
             "documentation": "Deletes the relay from the system, and gives back its stake to the owner.\n     * Can only be called by the relay owner, after `unstakeDelay` has elapsed since {removeRelayByOwner} was called.\n     * Emits an {Unstaked} event.",
-            "id": 11289,
+            "id": 11342,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "unstake",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11287,
+              "id": 11340,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11286,
+                  "id": 11339,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11289,
+                  "scope": 11342,
                   "src": "2841:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1309,7 +1309,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11285,
+                    "id": 11338,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2841:7:64",
@@ -1326,12 +1326,12 @@
               "src": "2840:15:64"
             },
             "returnParameters": {
-              "id": 11288,
+              "id": 11341,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2864:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "2824:41:64",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1340,20 +1340,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when a relay is unstaked for, including the returned stake.",
-            "id": 11295,
+            "id": 11348,
             "name": "Unstaked",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11294,
+              "id": 11347,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11291,
+                  "id": 11344,
                   "indexed": true,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11295,
+                  "scope": 11348,
                   "src": "2982:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1362,7 +1362,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11290,
+                    "id": 11343,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2982:7:64",
@@ -1377,11 +1377,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11293,
+                  "id": 11346,
                   "indexed": false,
                   "name": "stake",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11295,
+                  "scope": 11348,
                   "src": "3005:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1390,7 +1390,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11292,
+                    "id": 11345,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "3005:7:64",
@@ -1409,28 +1409,28 @@
           },
           {
             "canonicalName": "IRelayHub.RelayState",
-            "id": 11300,
+            "id": 11353,
             "members": [
               {
-                "id": 11296,
+                "id": 11349,
                 "name": "Unknown",
                 "nodeType": "EnumValue",
                 "src": "3084:7:64"
               },
               {
-                "id": 11297,
+                "id": 11350,
                 "name": "Staked",
                 "nodeType": "EnumValue",
                 "src": "3169:6:64"
               },
               {
-                "id": 11298,
+                "id": 11351,
                 "name": "Registered",
                 "nodeType": "EnumValue",
                 "src": "3244:10:64"
               },
               {
-                "id": 11299,
+                "id": 11352,
                 "name": "Removed",
                 "nodeType": "EnumValue",
                 "src": "3332:7:64"
@@ -1443,22 +1443,22 @@
           {
             "body": null,
             "documentation": "@dev Returns a relay's status. Note that relays can be deleted when unstaked or penalized, causing this function\nto return an empty entry.",
-            "id": 11315,
+            "id": 11368,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getRelay",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11303,
+              "id": 11356,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11302,
+                  "id": 11355,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11315,
+                  "scope": 11368,
                   "src": "3681:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1467,7 +1467,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11301,
+                    "id": 11354,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3681:7:64",
@@ -1484,15 +1484,15 @@
               "src": "3680:15:64"
             },
             "returnParameters": {
-              "id": 11314,
+              "id": 11367,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11305,
+                  "id": 11358,
                   "name": "totalStake",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11315,
+                  "scope": 11368,
                   "src": "3719:18:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1501,7 +1501,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11304,
+                    "id": 11357,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "3719:7:64",
@@ -1515,10 +1515,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11307,
+                  "id": 11360,
                   "name": "unstakeDelay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11315,
+                  "scope": 11368,
                   "src": "3739:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1527,7 +1527,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11306,
+                    "id": 11359,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "3739:7:64",
@@ -1541,10 +1541,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11309,
+                  "id": 11362,
                   "name": "unstakeTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11315,
+                  "scope": 11368,
                   "src": "3761:19:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1553,7 +1553,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11308,
+                    "id": 11361,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "3761:7:64",
@@ -1567,10 +1567,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11311,
+                  "id": 11364,
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11315,
+                  "scope": 11368,
                   "src": "3782:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1579,7 +1579,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 11310,
+                    "id": 11363,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "3782:15:64",
@@ -1594,26 +1594,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 11313,
+                  "id": 11366,
                   "name": "state",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11315,
+                  "scope": 11368,
                   "src": "3805:16:64",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_RelayState_$11300",
+                    "typeIdentifier": "t_enum$_RelayState_$11353",
                     "typeString": "enum IRelayHub.RelayState"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 11312,
+                    "id": 11365,
                     "name": "RelayState",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 11300,
+                    "referencedDeclaration": 11353,
                     "src": "3805:10:64",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_RelayState_$11300",
+                      "typeIdentifier": "t_enum$_RelayState_$11353",
                       "typeString": "enum IRelayHub.RelayState"
                     }
                   },
@@ -1623,7 +1623,7 @@
               ],
               "src": "3718:104:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "3663:160:64",
             "stateMutability": "view",
             "superFunction": null,
@@ -1632,22 +1632,22 @@
           {
             "body": null,
             "documentation": "@dev Deposits Ether for a contract, so that it can receive (and pay for) relayed transactions.\n     * Unused balance can only be withdrawn by the contract itself, by calling {withdraw}.\n     * Emits a {Deposited} event.",
-            "id": 11320,
+            "id": 11373,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "depositFor",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11318,
+              "id": 11371,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11317,
+                  "id": 11370,
                   "name": "target",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11320,
+                  "scope": 11373,
                   "src": "4133:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1656,7 +1656,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11316,
+                    "id": 11369,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "4133:7:64",
@@ -1673,12 +1673,12 @@
               "src": "4132:16:64"
             },
             "returnParameters": {
-              "id": 11319,
+              "id": 11372,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "4165:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "4113:53:64",
             "stateMutability": "payable",
             "superFunction": null,
@@ -1687,20 +1687,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when {depositFor} is called, including the amount and account that was funded.",
-            "id": 11328,
+            "id": 11381,
             "name": "Deposited",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11327,
+              "id": 11380,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11322,
+                  "id": 11375,
                   "indexed": true,
                   "name": "recipient",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11328,
+                  "scope": 11381,
                   "src": "4303:25:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1709,7 +1709,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11321,
+                    "id": 11374,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "4303:7:64",
@@ -1724,11 +1724,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11324,
+                  "id": 11377,
                   "indexed": true,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11328,
+                  "scope": 11381,
                   "src": "4330:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1737,7 +1737,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11323,
+                    "id": 11376,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "4330:7:64",
@@ -1752,11 +1752,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11326,
+                  "id": 11379,
                   "indexed": false,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11328,
+                  "scope": 11381,
                   "src": "4352:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1765,7 +1765,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11325,
+                    "id": 11378,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "4352:7:64",
@@ -1785,22 +1785,22 @@
           {
             "body": null,
             "documentation": "@dev Returns an account's deposits. These can be either a contracts's funds, or a relay owner's revenue.",
-            "id": 11335,
+            "id": 11388,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "balanceOf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11331,
+              "id": 11384,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11330,
+                  "id": 11383,
                   "name": "target",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11335,
+                  "scope": 11388,
                   "src": "4521:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1809,7 +1809,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11329,
+                    "id": 11382,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "4521:7:64",
@@ -1826,15 +1826,15 @@
               "src": "4520:16:64"
             },
             "returnParameters": {
-              "id": 11334,
+              "id": 11387,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11333,
+                  "id": 11386,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11335,
+                  "scope": 11388,
                   "src": "4560:7:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1843,7 +1843,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11332,
+                    "id": 11385,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "4560:7:64",
@@ -1858,7 +1858,7 @@
               ],
               "src": "4559:9:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "4502:67:64",
             "stateMutability": "view",
             "superFunction": null,
@@ -1867,22 +1867,22 @@
           {
             "body": null,
             "documentation": "Withdraws from an account's balance, sending it back to it. Relay owners call this to retrieve their revenue, and\ncontracts can use it to reduce their funding.\n     * Emits a {Withdrawn} event.",
-            "id": 11342,
+            "id": 11395,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "withdraw",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11340,
+              "id": 11393,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11337,
+                  "id": 11390,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11342,
+                  "scope": 11395,
                   "src": "4824:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1891,7 +1891,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11336,
+                    "id": 11389,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "4824:7:64",
@@ -1905,10 +1905,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11339,
+                  "id": 11392,
                   "name": "dest",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11342,
+                  "scope": 11395,
                   "src": "4840:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1917,7 +1917,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 11338,
+                    "id": 11391,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "4840:15:64",
@@ -1934,12 +1934,12 @@
               "src": "4823:38:64"
             },
             "returnParameters": {
-              "id": 11341,
+              "id": 11394,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "4870:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "4806:65:64",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1948,20 +1948,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when an account withdraws funds from `RelayHub`.",
-            "id": 11350,
+            "id": 11403,
             "name": "Withdrawn",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11349,
+              "id": 11402,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11344,
+                  "id": 11397,
                   "indexed": true,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11350,
+                  "scope": 11403,
                   "src": "4978:23:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1970,7 +1970,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11343,
+                    "id": 11396,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "4978:7:64",
@@ -1985,11 +1985,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11346,
+                  "id": 11399,
                   "indexed": true,
                   "name": "dest",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11350,
+                  "scope": 11403,
                   "src": "5003:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1998,7 +1998,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11345,
+                    "id": 11398,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "5003:7:64",
@@ -2013,11 +2013,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11348,
+                  "id": 11401,
                   "indexed": false,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11350,
+                  "scope": 11403,
                   "src": "5025:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2026,7 +2026,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11347,
+                    "id": 11400,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5025:7:64",
@@ -2046,22 +2046,22 @@
           {
             "body": null,
             "documentation": "@dev Checks if the `RelayHub` will accept a relayed operation.\nMultiple things must be true for this to happen:\n - all arguments must be signed for by the sender (`from`)\n - the sender's nonce must be the current one\n - the recipient must accept this transaction (via {acceptRelayedCall})\n     * Returns a `PreconditionCheck` value (`OK` when the transaction can be relayed), or a recipient-specific error\ncode if it returns one in {acceptRelayedCall}.",
-            "id": 11377,
+            "id": 11430,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "canRelay",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11371,
+              "id": 11424,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11352,
+                  "id": 11405,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5609:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2070,7 +2070,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11351,
+                    "id": 11404,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "5609:7:64",
@@ -2085,10 +2085,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11354,
+                  "id": 11407,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5632:12:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2097,7 +2097,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11353,
+                    "id": 11406,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "5632:7:64",
@@ -2112,10 +2112,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11356,
+                  "id": 11409,
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5654:10:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2124,7 +2124,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11355,
+                    "id": 11408,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "5654:7:64",
@@ -2139,10 +2139,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11358,
+                  "id": 11411,
                   "name": "encodedFunction",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5674:30:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -2151,7 +2151,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11357,
+                    "id": 11410,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "5674:5:64",
@@ -2165,10 +2165,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11360,
+                  "id": 11413,
                   "name": "transactionFee",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5714:22:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2177,7 +2177,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11359,
+                    "id": 11412,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5714:7:64",
@@ -2191,10 +2191,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11362,
+                  "id": 11415,
                   "name": "gasPrice",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5746:16:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2203,7 +2203,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11361,
+                    "id": 11414,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5746:7:64",
@@ -2217,10 +2217,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11364,
+                  "id": 11417,
                   "name": "gasLimit",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5772:16:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2229,7 +2229,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11363,
+                    "id": 11416,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5772:7:64",
@@ -2243,10 +2243,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11366,
+                  "id": 11419,
                   "name": "nonce",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5798:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2255,7 +2255,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11365,
+                    "id": 11418,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5798:7:64",
@@ -2269,10 +2269,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11368,
+                  "id": 11421,
                   "name": "signature",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5821:24:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -2281,7 +2281,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11367,
+                    "id": 11420,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "5821:5:64",
@@ -2295,10 +2295,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11370,
+                  "id": 11423,
                   "name": "approvalData",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5855:27:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -2307,7 +2307,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11369,
+                    "id": 11422,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "5855:5:64",
@@ -2323,15 +2323,15 @@
               "src": "5599:289:64"
             },
             "returnParameters": {
-              "id": 11376,
+              "id": 11429,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11373,
+                  "id": 11426,
                   "name": "status",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5912:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2340,7 +2340,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11372,
+                    "id": 11425,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "5912:7:64",
@@ -2354,10 +2354,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11375,
+                  "id": 11428,
                   "name": "recipientContext",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11377,
+                  "scope": 11430,
                   "src": "5928:29:64",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2366,7 +2366,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11374,
+                    "id": 11427,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "5928:5:64",
@@ -2381,7 +2381,7 @@
               ],
               "src": "5911:47:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "5582:377:64",
             "stateMutability": "view",
             "superFunction": null,
@@ -2389,34 +2389,34 @@
           },
           {
             "canonicalName": "IRelayHub.PreconditionCheck",
-            "id": 11383,
+            "id": 11436,
             "members": [
               {
-                "id": 11378,
+                "id": 11431,
                 "name": "OK",
                 "nodeType": "EnumValue",
                 "src": "6103:2:64"
               },
               {
-                "id": 11379,
+                "id": 11432,
                 "name": "WrongSignature",
                 "nodeType": "EnumValue",
                 "src": "6185:14:64"
               },
               {
-                "id": 11380,
+                "id": 11433,
                 "name": "WrongNonce",
                 "nodeType": "EnumValue",
                 "src": "6283:10:64"
               },
               {
-                "id": 11381,
+                "id": 11434,
                 "name": "AcceptRelayedCallReverted",
                 "nodeType": "EnumValue",
                 "src": "6377:25:64"
               },
               {
-                "id": 11382,
+                "id": 11435,
                 "name": "InvalidRecipientStatusCode",
                 "nodeType": "EnumValue",
                 "src": "6471:26:64"
@@ -2429,22 +2429,22 @@
           {
             "body": null,
             "documentation": "@dev Relays a transaction.\n     * For this to succeed, multiple conditions must be met:\n - {canRelay} must `return PreconditionCheck.OK`\n - the sender must be a registered relay\n - the transaction's gas price must be larger or equal to the one that was requested by the sender\n - the transaction must have enough gas to not run out of gas if all internal transactions (calls to the\nrecipient) use all gas available to them\n - the recipient must have enough balance to pay the relay for the worst-case scenario (i.e. when all gas is\nspent)\n     * If all conditions are met, the call will be relayed and the recipient charged. {preRelayedCall}, the encoded\nfunction and {postRelayedCall} will be called in that order.\n     * Parameters:\n - `from`: the client originating the request\n - `to`: the target {IRelayRecipient} contract\n - `encodedFunction`: the function call to relay, including data\n - `transactionFee`: fee (%) the relay takes over actual gas cost\n - `gasPrice`: gas price the client is willing to pay\n - `gasLimit`: gas to forward when calling the encoded function\n - `nonce`: client's nonce\n - `signature`: client's signature over all previous params, plus the relay and RelayHub addresses\n - `approvalData`: dapp-specific data forwared to {acceptRelayedCall}. This value is *not* verified by the\n`RelayHub`, but it still can be used for e.g. a signature.\n     * Emits a {TransactionRelayed} event.",
-            "id": 11404,
+            "id": 11457,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "relayCall",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11402,
+              "id": 11455,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11385,
+                  "id": 11438,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8187:12:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2453,7 +2453,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11384,
+                    "id": 11437,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "8187:7:64",
@@ -2468,10 +2468,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11387,
+                  "id": 11440,
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8209:10:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2480,7 +2480,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11386,
+                    "id": 11439,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "8209:7:64",
@@ -2495,10 +2495,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11389,
+                  "id": 11442,
                   "name": "encodedFunction",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8229:30:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -2507,7 +2507,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11388,
+                    "id": 11441,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "8229:5:64",
@@ -2521,10 +2521,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11391,
+                  "id": 11444,
                   "name": "transactionFee",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8269:22:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2533,7 +2533,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11390,
+                    "id": 11443,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "8269:7:64",
@@ -2547,10 +2547,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11393,
+                  "id": 11446,
                   "name": "gasPrice",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8301:16:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2559,7 +2559,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11392,
+                    "id": 11445,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "8301:7:64",
@@ -2573,10 +2573,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11395,
+                  "id": 11448,
                   "name": "gasLimit",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8327:16:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2585,7 +2585,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11394,
+                    "id": 11447,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "8327:7:64",
@@ -2599,10 +2599,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11397,
+                  "id": 11450,
                   "name": "nonce",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8353:13:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2611,7 +2611,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11396,
+                    "id": 11449,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "8353:7:64",
@@ -2625,10 +2625,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11399,
+                  "id": 11452,
                   "name": "signature",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8376:24:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -2637,7 +2637,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11398,
+                    "id": 11451,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "8376:5:64",
@@ -2651,10 +2651,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11401,
+                  "id": 11454,
                   "name": "approvalData",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11404,
+                  "scope": 11457,
                   "src": "8410:27:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -2663,7 +2663,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11400,
+                    "id": 11453,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "8410:5:64",
@@ -2679,12 +2679,12 @@
               "src": "8177:266:64"
             },
             "returnParameters": {
-              "id": 11403,
+              "id": 11456,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "8452:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "8159:294:64",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2693,20 +2693,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when an attempt to relay a call failed.\n     * This can happen due to incorrect {relayCall} arguments, or the recipient not accepting the relayed call. The\nactual relayed call was not executed, and the recipient not charged.\n     * The `reason` parameter contains an error code: values 1-10 correspond to `PreconditionCheck` entries, and values\nover 10 are custom recipient error codes returned from {acceptRelayedCall}.",
-            "id": 11416,
+            "id": 11469,
             "name": "CanRelayFailed",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11415,
+              "id": 11468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11406,
+                  "id": 11459,
                   "indexed": true,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11416,
+                  "scope": 11469,
                   "src": "8965:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2715,7 +2715,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11405,
+                    "id": 11458,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "8965:7:64",
@@ -2730,11 +2730,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11408,
+                  "id": 11461,
                   "indexed": true,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11416,
+                  "scope": 11469,
                   "src": "8988:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2743,7 +2743,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11407,
+                    "id": 11460,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "8988:7:64",
@@ -2758,11 +2758,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11410,
+                  "id": 11463,
                   "indexed": true,
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11416,
+                  "scope": 11469,
                   "src": "9010:18:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2771,7 +2771,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11409,
+                    "id": 11462,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "9010:7:64",
@@ -2786,11 +2786,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11412,
+                  "id": 11465,
                   "indexed": false,
                   "name": "selector",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11416,
+                  "scope": 11469,
                   "src": "9030:15:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2799,7 +2799,7 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 11411,
+                    "id": 11464,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "9030:6:64",
@@ -2813,11 +2813,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11414,
+                  "id": 11467,
                   "indexed": false,
                   "name": "reason",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11416,
+                  "scope": 11469,
                   "src": "9047:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2826,7 +2826,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11413,
+                    "id": 11466,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "9047:7:64",
@@ -2846,20 +2846,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when a transaction is relayed. \nUseful when monitoring a relay's operation and relayed calls to a contract\n     * Note that the actual encoded function might be reverted: this is indicated in the `status` parameter.\n     * `charge` is the Ether value deducted from the recipient's balance, paid to the relay's owner.",
-            "id": 11430,
+            "id": 11483,
             "name": "TransactionRelayed",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11429,
+              "id": 11482,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11418,
+                  "id": 11471,
                   "indexed": true,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11430,
+                  "scope": 11483,
                   "src": "9468:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2868,7 +2868,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11417,
+                    "id": 11470,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "9468:7:64",
@@ -2883,11 +2883,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11420,
+                  "id": 11473,
                   "indexed": true,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11430,
+                  "scope": 11483,
                   "src": "9491:20:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2896,7 +2896,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11419,
+                    "id": 11472,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "9491:7:64",
@@ -2911,11 +2911,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11422,
+                  "id": 11475,
                   "indexed": true,
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11430,
+                  "scope": 11483,
                   "src": "9513:18:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2924,7 +2924,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11421,
+                    "id": 11474,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "9513:7:64",
@@ -2939,11 +2939,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11424,
+                  "id": 11477,
                   "indexed": false,
                   "name": "selector",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11430,
+                  "scope": 11483,
                   "src": "9533:15:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2952,7 +2952,7 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 11423,
+                    "id": 11476,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "9533:6:64",
@@ -2966,27 +2966,27 @@
                 },
                 {
                   "constant": false,
-                  "id": 11426,
+                  "id": 11479,
                   "indexed": false,
                   "name": "status",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11430,
+                  "scope": 11483,
                   "src": "9550:22:64",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_RelayCallStatus_$11436",
+                    "typeIdentifier": "t_enum$_RelayCallStatus_$11489",
                     "typeString": "enum IRelayHub.RelayCallStatus"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 11425,
+                    "id": 11478,
                     "name": "RelayCallStatus",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 11436,
+                    "referencedDeclaration": 11489,
                     "src": "9550:15:64",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_RelayCallStatus_$11436",
+                      "typeIdentifier": "t_enum$_RelayCallStatus_$11489",
                       "typeString": "enum IRelayHub.RelayCallStatus"
                     }
                   },
@@ -2995,11 +2995,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11428,
+                  "id": 11481,
                   "indexed": false,
                   "name": "charge",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11430,
+                  "scope": 11483,
                   "src": "9574:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3008,7 +3008,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11427,
+                    "id": 11480,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "9574:7:64",
@@ -3027,34 +3027,34 @@
           },
           {
             "canonicalName": "IRelayHub.RelayCallStatus",
-            "id": 11436,
+            "id": 11489,
             "members": [
               {
-                "id": 11431,
+                "id": 11484,
                 "name": "OK",
                 "nodeType": "EnumValue",
                 "src": "9686:2:64"
               },
               {
-                "id": 11432,
+                "id": 11485,
                 "name": "RelayedCallFailed",
                 "nodeType": "EnumValue",
                 "src": "9818:17:64"
               },
               {
-                "id": 11433,
+                "id": 11486,
                 "name": "PreRelayedFailed",
                 "nodeType": "EnumValue",
                 "src": "9911:16:64"
               },
               {
-                "id": 11434,
+                "id": 11487,
                 "name": "PostRelayedFailed",
                 "nodeType": "EnumValue",
                 "src": "10011:17:64"
               },
               {
-                "id": 11435,
+                "id": 11488,
                 "name": "RecipientBalanceChanged",
                 "nodeType": "EnumValue",
                 "src": "10121:23:64"
@@ -3067,22 +3067,22 @@
           {
             "body": null,
             "documentation": "@dev Returns how much gas should be forwarded to a call to {relayCall}, in order to relay a transaction that will\nspend up to `relayedCallStipend` gas.",
-            "id": 11443,
+            "id": 11496,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "requiredGas",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11439,
+              "id": 11492,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11438,
+                  "id": 11491,
                   "name": "relayedCallStipend",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11443,
+                  "scope": 11496,
                   "src": "10444:26:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3091,7 +3091,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11437,
+                    "id": 11490,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "10444:7:64",
@@ -3107,15 +3107,15 @@
               "src": "10443:28:64"
             },
             "returnParameters": {
-              "id": 11442,
+              "id": 11495,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11441,
+                  "id": 11494,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11443,
+                  "scope": 11496,
                   "src": "10495:7:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3124,7 +3124,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11440,
+                    "id": 11493,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "10495:7:64",
@@ -3139,7 +3139,7 @@
               ],
               "src": "10494:9:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "10423:81:64",
             "stateMutability": "view",
             "superFunction": null,
@@ -3148,22 +3148,22 @@
           {
             "body": null,
             "documentation": "@dev Returns the maximum recipient charge, given the amount of gas forwarded, gas price and relay fee.",
-            "id": 11454,
+            "id": 11507,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "maxPossibleCharge",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11450,
+              "id": 11503,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11445,
+                  "id": 11498,
                   "name": "relayedCallStipend",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11454,
+                  "scope": 11507,
                   "src": "10663:26:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3172,7 +3172,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11444,
+                    "id": 11497,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "10663:7:64",
@@ -3186,10 +3186,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11447,
+                  "id": 11500,
                   "name": "gasPrice",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11454,
+                  "scope": 11507,
                   "src": "10691:16:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3198,7 +3198,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11446,
+                    "id": 11499,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "10691:7:64",
@@ -3212,10 +3212,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11449,
+                  "id": 11502,
                   "name": "transactionFee",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11454,
+                  "scope": 11507,
                   "src": "10709:22:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3224,7 +3224,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11448,
+                    "id": 11501,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "10709:7:64",
@@ -3240,15 +3240,15 @@
               "src": "10662:70:64"
             },
             "returnParameters": {
-              "id": 11453,
+              "id": 11506,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11452,
+                  "id": 11505,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11454,
+                  "scope": 11507,
                   "src": "10756:7:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3257,7 +3257,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11451,
+                    "id": 11504,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "10756:7:64",
@@ -3272,7 +3272,7 @@
               ],
               "src": "10755:9:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "10636:129:64",
             "stateMutability": "view",
             "superFunction": null,
@@ -3281,22 +3281,22 @@
           {
             "body": null,
             "documentation": "@dev Penalize a relay that signed two transactions using the same nonce (making only the first one valid) and\ndifferent data (gas price, gas limit, etc. may be different).\n     * The (unsigned) transaction data and signature for both transactions must be provided.",
-            "id": 11465,
+            "id": 11518,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "penalizeRepeatedNonce",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11463,
+              "id": 11516,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11456,
+                  "id": 11509,
                   "name": "unsignedTx1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11465,
+                  "scope": 11518,
                   "src": "11395:26:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -3305,7 +3305,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11455,
+                    "id": 11508,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "11395:5:64",
@@ -3319,10 +3319,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11458,
+                  "id": 11511,
                   "name": "signature1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11465,
+                  "scope": 11518,
                   "src": "11423:25:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -3331,7 +3331,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11457,
+                    "id": 11510,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "11423:5:64",
@@ -3345,10 +3345,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11460,
+                  "id": 11513,
                   "name": "unsignedTx2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11465,
+                  "scope": 11518,
                   "src": "11450:26:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -3357,7 +3357,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11459,
+                    "id": 11512,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "11450:5:64",
@@ -3371,10 +3371,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11462,
+                  "id": 11515,
                   "name": "signature2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11465,
+                  "scope": 11518,
                   "src": "11478:25:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -3383,7 +3383,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11461,
+                    "id": 11514,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "11478:5:64",
@@ -3399,12 +3399,12 @@
               "src": "11394:110:64"
             },
             "returnParameters": {
-              "id": 11464,
+              "id": 11517,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "11513:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "11364:150:64",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3413,22 +3413,22 @@
           {
             "body": null,
             "documentation": "@dev Penalize a relay that sent a transaction that didn't target `RelayHub`'s {registerRelay} or {relayCall}.",
-            "id": 11472,
+            "id": 11525,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "penalizeIllegalTransaction",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11470,
+              "id": 11523,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11467,
+                  "id": 11520,
                   "name": "unsignedTx",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11472,
+                  "scope": 11525,
                   "src": "11689:25:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -3437,7 +3437,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11466,
+                    "id": 11519,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "11689:5:64",
@@ -3451,10 +3451,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 11469,
+                  "id": 11522,
                   "name": "signature",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11472,
+                  "scope": 11525,
                   "src": "11716:24:64",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -3463,7 +3463,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 11468,
+                    "id": 11521,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "11716:5:64",
@@ -3479,12 +3479,12 @@
               "src": "11688:53:64"
             },
             "returnParameters": {
-              "id": 11471,
+              "id": 11524,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "11750:0:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "11653:98:64",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3493,20 +3493,20 @@
           {
             "anonymous": false,
             "documentation": "@dev Emitted when a relay is penalized.",
-            "id": 11480,
+            "id": 11533,
             "name": "Penalized",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11479,
+              "id": 11532,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11474,
+                  "id": 11527,
                   "indexed": true,
                   "name": "relay",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11480,
+                  "scope": 11533,
                   "src": "11836:21:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3515,7 +3515,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11473,
+                    "id": 11526,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "11836:7:64",
@@ -3530,11 +3530,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11476,
+                  "id": 11529,
                   "indexed": false,
                   "name": "sender",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11480,
+                  "scope": 11533,
                   "src": "11859:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3543,7 +3543,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11475,
+                    "id": 11528,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "11859:7:64",
@@ -3558,11 +3558,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 11478,
+                  "id": 11531,
                   "indexed": false,
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11480,
+                  "scope": 11533,
                   "src": "11875:14:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3571,7 +3571,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11477,
+                    "id": 11530,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "11875:7:64",
@@ -3591,22 +3591,22 @@
           {
             "body": null,
             "documentation": "@dev Returns an account's nonce in `RelayHub`.",
-            "id": 11487,
+            "id": 11540,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getNonce",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 11483,
+              "id": 11536,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11482,
+                  "id": 11535,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11487,
+                  "scope": 11540,
                   "src": "11985:12:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3615,7 +3615,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 11481,
+                    "id": 11534,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "11985:7:64",
@@ -3632,15 +3632,15 @@
               "src": "11984:14:64"
             },
             "returnParameters": {
-              "id": 11486,
+              "id": 11539,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11485,
+                  "id": 11538,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11487,
+                  "scope": 11540,
                   "src": "12022:7:64",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3649,7 +3649,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11484,
+                    "id": 11537,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "12022:7:64",
@@ -3664,14 +3664,14 @@
               ],
               "src": "12021:9:64"
             },
-            "scope": 11488,
+            "scope": 11541,
             "src": "11967:64:64",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 11489,
+        "scope": 11542,
         "src": "355:11678:64"
       }
     ],
@@ -3682,7 +3682,7 @@
       "absolutePath": "project:/contracts/openzeppelin-solidity/contracts/GSN/IRelayHub.sol",
       "exportedSymbols": {
         "IRelayHub": [
-          11488
+          11541
         ]
       }
     },
@@ -3696,7 +3696,7 @@
             ".0"
           ]
         },
-        "id": 11237,
+        "id": 11290,
         "name": "PragmaDirective",
         "src": "0:23:64"
       },
@@ -3712,10 +3712,10 @@
           "documentation": "@dev Interface for `RelayHub`, the core contract of the GSN. Users should not need to interact with this contract\ndirectly.\n * See the https://github.com/OpenZeppelin/openzeppelin-gsn-helpers[OpenZeppelin GSN helpers] for more information on\nhow to deploy an instance of `RelayHub` on your local test network.",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            11488
+            11541
           ],
           "name": "IRelayHub",
-          "scope": 11489
+          "scope": 11542
         },
         "children": [
           {
@@ -3729,7 +3729,7 @@
                 null
               ],
               "name": "stake",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "external"
@@ -3741,7 +3741,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "relayaddr",
-                      "scope": 11244,
+                      "scope": 11297,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3755,12 +3755,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11238,
+                        "id": 11291,
                         "name": "ElementaryTypeName",
                         "src": "954:7:64"
                       }
                     ],
-                    "id": 11239,
+                    "id": 11292,
                     "name": "VariableDeclaration",
                     "src": "954:17:64"
                   },
@@ -3768,7 +3768,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "unstakeDelay",
-                      "scope": 11244,
+                      "scope": 11297,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3781,17 +3781,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11240,
+                        "id": 11293,
                         "name": "ElementaryTypeName",
                         "src": "973:7:64"
                       }
                     ],
-                    "id": 11241,
+                    "id": 11294,
                     "name": "VariableDeclaration",
                     "src": "973:20:64"
                   }
                 ],
-                "id": 11242,
+                "id": 11295,
                 "name": "ParameterList",
                 "src": "953:41:64"
               },
@@ -3802,12 +3802,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11243,
+                "id": 11296,
                 "name": "ParameterList",
                 "src": "1011:0:64"
               }
             ],
-            "id": 11244,
+            "id": 11297,
             "name": "FunctionDefinition",
             "src": "939:73:64"
           },
@@ -3825,7 +3825,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "relay",
-                      "scope": 11252,
+                      "scope": 11305,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3839,12 +3839,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11245,
+                        "id": 11298,
                         "name": "ElementaryTypeName",
                         "src": "1118:7:64"
                       }
                     ],
-                    "id": 11246,
+                    "id": 11299,
                     "name": "VariableDeclaration",
                     "src": "1118:21:64"
                   },
@@ -3853,7 +3853,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "stake",
-                      "scope": 11252,
+                      "scope": 11305,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3866,12 +3866,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11247,
+                        "id": 11300,
                         "name": "ElementaryTypeName",
                         "src": "1141:7:64"
                       }
                     ],
-                    "id": 11248,
+                    "id": 11301,
                     "name": "VariableDeclaration",
                     "src": "1141:13:64"
                   },
@@ -3880,7 +3880,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "unstakeDelay",
-                      "scope": 11252,
+                      "scope": 11305,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3893,22 +3893,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11249,
+                        "id": 11302,
                         "name": "ElementaryTypeName",
                         "src": "1156:7:64"
                       }
                     ],
-                    "id": 11250,
+                    "id": 11303,
                     "name": "VariableDeclaration",
                     "src": "1156:20:64"
                   }
                 ],
-                "id": 11251,
+                "id": 11304,
                 "name": "ParameterList",
                 "src": "1117:60:64"
               }
             ],
-            "id": 11252,
+            "id": 11305,
             "name": "EventDefinition",
             "src": "1105:73:64"
           },
@@ -3923,7 +3923,7 @@
                 null
               ],
               "name": "registerRelay",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "external"
@@ -3935,7 +3935,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "transactionFee",
-                      "scope": 11259,
+                      "scope": 11312,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3948,12 +3948,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11253,
+                        "id": 11306,
                         "name": "ElementaryTypeName",
                         "src": "1598:7:64"
                       }
                     ],
-                    "id": 11254,
+                    "id": 11307,
                     "name": "VariableDeclaration",
                     "src": "1598:22:64"
                   },
@@ -3961,7 +3961,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "url",
-                      "scope": 11259,
+                      "scope": 11312,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "string",
@@ -3974,17 +3974,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 11255,
+                        "id": 11308,
                         "name": "ElementaryTypeName",
                         "src": "1622:6:64"
                       }
                     ],
-                    "id": 11256,
+                    "id": 11309,
                     "name": "VariableDeclaration",
                     "src": "1622:19:64"
                   }
                 ],
-                "id": 11257,
+                "id": 11310,
                 "name": "ParameterList",
                 "src": "1597:45:64"
               },
@@ -3995,12 +3995,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11258,
+                "id": 11311,
                 "name": "ParameterList",
                 "src": "1651:0:64"
               }
             ],
-            "id": 11259,
+            "id": 11312,
             "name": "FunctionDefinition",
             "src": "1575:77:64"
           },
@@ -4018,7 +4018,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "relay",
-                      "scope": 11273,
+                      "scope": 11326,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4032,12 +4032,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11260,
+                        "id": 11313,
                         "name": "ElementaryTypeName",
                         "src": "1881:7:64"
                       }
                     ],
-                    "id": 11261,
+                    "id": 11314,
                     "name": "VariableDeclaration",
                     "src": "1881:21:64"
                   },
@@ -4046,7 +4046,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "owner",
-                      "scope": 11273,
+                      "scope": 11326,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4060,12 +4060,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11262,
+                        "id": 11315,
                         "name": "ElementaryTypeName",
                         "src": "1904:7:64"
                       }
                     ],
-                    "id": 11263,
+                    "id": 11316,
                     "name": "VariableDeclaration",
                     "src": "1904:21:64"
                   },
@@ -4074,7 +4074,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "transactionFee",
-                      "scope": 11273,
+                      "scope": 11326,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4087,12 +4087,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11264,
+                        "id": 11317,
                         "name": "ElementaryTypeName",
                         "src": "1927:7:64"
                       }
                     ],
-                    "id": 11265,
+                    "id": 11318,
                     "name": "VariableDeclaration",
                     "src": "1927:22:64"
                   },
@@ -4101,7 +4101,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "stake",
-                      "scope": 11273,
+                      "scope": 11326,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4114,12 +4114,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11266,
+                        "id": 11319,
                         "name": "ElementaryTypeName",
                         "src": "1951:7:64"
                       }
                     ],
-                    "id": 11267,
+                    "id": 11320,
                     "name": "VariableDeclaration",
                     "src": "1951:13:64"
                   },
@@ -4128,7 +4128,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "unstakeDelay",
-                      "scope": 11273,
+                      "scope": 11326,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4141,12 +4141,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11268,
+                        "id": 11321,
                         "name": "ElementaryTypeName",
                         "src": "1966:7:64"
                       }
                     ],
-                    "id": 11269,
+                    "id": 11322,
                     "name": "VariableDeclaration",
                     "src": "1966:20:64"
                   },
@@ -4155,7 +4155,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "url",
-                      "scope": 11273,
+                      "scope": 11326,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "string",
@@ -4168,22 +4168,22 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 11270,
+                        "id": 11323,
                         "name": "ElementaryTypeName",
                         "src": "1988:6:64"
                       }
                     ],
-                    "id": 11271,
+                    "id": 11324,
                     "name": "VariableDeclaration",
                     "src": "1988:10:64"
                   }
                 ],
-                "id": 11272,
+                "id": 11325,
                 "name": "ParameterList",
                 "src": "1880:119:64"
               }
             ],
-            "id": 11273,
+            "id": 11326,
             "name": "EventDefinition",
             "src": "1864:136:64"
           },
@@ -4198,7 +4198,7 @@
                 null
               ],
               "name": "removeRelayByOwner",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "external"
@@ -4210,7 +4210,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "relay",
-                      "scope": 11278,
+                      "scope": 11331,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4224,17 +4224,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11274,
+                        "id": 11327,
                         "name": "ElementaryTypeName",
                         "src": "2336:7:64"
                       }
                     ],
-                    "id": 11275,
+                    "id": 11328,
                     "name": "VariableDeclaration",
                     "src": "2336:13:64"
                   }
                 ],
-                "id": 11276,
+                "id": 11329,
                 "name": "ParameterList",
                 "src": "2335:15:64"
               },
@@ -4245,12 +4245,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11277,
+                "id": 11330,
                 "name": "ParameterList",
                 "src": "2359:0:64"
               }
             ],
-            "id": 11278,
+            "id": 11331,
             "name": "FunctionDefinition",
             "src": "2308:52:64"
           },
@@ -4268,7 +4268,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "relay",
-                      "scope": 11284,
+                      "scope": 11337,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4282,12 +4282,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11279,
+                        "id": 11332,
                         "name": "ElementaryTypeName",
                         "src": "2518:7:64"
                       }
                     ],
-                    "id": 11280,
+                    "id": 11333,
                     "name": "VariableDeclaration",
                     "src": "2518:21:64"
                   },
@@ -4296,7 +4296,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "unstakeTime",
-                      "scope": 11284,
+                      "scope": 11337,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4309,22 +4309,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11281,
+                        "id": 11334,
                         "name": "ElementaryTypeName",
                         "src": "2541:7:64"
                       }
                     ],
-                    "id": 11282,
+                    "id": 11335,
                     "name": "VariableDeclaration",
                     "src": "2541:19:64"
                   }
                 ],
-                "id": 11283,
+                "id": 11336,
                 "name": "ParameterList",
                 "src": "2517:44:64"
               }
             ],
-            "id": 11284,
+            "id": 11337,
             "name": "EventDefinition",
             "src": "2499:63:64"
           },
@@ -4339,7 +4339,7 @@
                 null
               ],
               "name": "unstake",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "external"
@@ -4351,7 +4351,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "relay",
-                      "scope": 11289,
+                      "scope": 11342,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4365,17 +4365,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11285,
+                        "id": 11338,
                         "name": "ElementaryTypeName",
                         "src": "2841:7:64"
                       }
                     ],
-                    "id": 11286,
+                    "id": 11339,
                     "name": "VariableDeclaration",
                     "src": "2841:13:64"
                   }
                 ],
-                "id": 11287,
+                "id": 11340,
                 "name": "ParameterList",
                 "src": "2840:15:64"
               },
@@ -4386,12 +4386,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11288,
+                "id": 11341,
                 "name": "ParameterList",
                 "src": "2864:0:64"
               }
             ],
-            "id": 11289,
+            "id": 11342,
             "name": "FunctionDefinition",
             "src": "2824:41:64"
           },
@@ -4409,7 +4409,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "relay",
-                      "scope": 11295,
+                      "scope": 11348,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4423,12 +4423,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11290,
+                        "id": 11343,
                         "name": "ElementaryTypeName",
                         "src": "2982:7:64"
                       }
                     ],
-                    "id": 11291,
+                    "id": 11344,
                     "name": "VariableDeclaration",
                     "src": "2982:21:64"
                   },
@@ -4437,7 +4437,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "stake",
-                      "scope": 11295,
+                      "scope": 11348,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4450,22 +4450,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11292,
+                        "id": 11345,
                         "name": "ElementaryTypeName",
                         "src": "3005:7:64"
                       }
                     ],
-                    "id": 11293,
+                    "id": 11346,
                     "name": "VariableDeclaration",
                     "src": "3005:13:64"
                   }
                 ],
-                "id": 11294,
+                "id": 11347,
                 "name": "ParameterList",
                 "src": "2981:38:64"
               }
             ],
-            "id": 11295,
+            "id": 11348,
             "name": "EventDefinition",
             "src": "2967:53:64"
           },
@@ -4479,7 +4479,7 @@
                 "attributes": {
                   "name": "Unknown"
                 },
-                "id": 11296,
+                "id": 11349,
                 "name": "EnumValue",
                 "src": "3084:7:64"
               },
@@ -4487,7 +4487,7 @@
                 "attributes": {
                   "name": "Staked"
                 },
-                "id": 11297,
+                "id": 11350,
                 "name": "EnumValue",
                 "src": "3169:6:64"
               },
@@ -4495,7 +4495,7 @@
                 "attributes": {
                   "name": "Registered"
                 },
-                "id": 11298,
+                "id": 11351,
                 "name": "EnumValue",
                 "src": "3244:10:64"
               },
@@ -4503,12 +4503,12 @@
                 "attributes": {
                   "name": "Removed"
                 },
-                "id": 11299,
+                "id": 11352,
                 "name": "EnumValue",
                 "src": "3332:7:64"
               }
             ],
-            "id": 11300,
+            "id": 11353,
             "name": "EnumDefinition",
             "src": "3058:430:64"
           },
@@ -4523,7 +4523,7 @@
                 null
               ],
               "name": "getRelay",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -4535,7 +4535,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "relay",
-                      "scope": 11315,
+                      "scope": 11368,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4549,17 +4549,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11301,
+                        "id": 11354,
                         "name": "ElementaryTypeName",
                         "src": "3681:7:64"
                       }
                     ],
-                    "id": 11302,
+                    "id": 11355,
                     "name": "VariableDeclaration",
                     "src": "3681:13:64"
                   }
                 ],
-                "id": 11303,
+                "id": 11356,
                 "name": "ParameterList",
                 "src": "3680:15:64"
               },
@@ -4569,7 +4569,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "totalStake",
-                      "scope": 11315,
+                      "scope": 11368,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4582,12 +4582,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11304,
+                        "id": 11357,
                         "name": "ElementaryTypeName",
                         "src": "3719:7:64"
                       }
                     ],
-                    "id": 11305,
+                    "id": 11358,
                     "name": "VariableDeclaration",
                     "src": "3719:18:64"
                   },
@@ -4595,7 +4595,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "unstakeDelay",
-                      "scope": 11315,
+                      "scope": 11368,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4608,12 +4608,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11306,
+                        "id": 11359,
                         "name": "ElementaryTypeName",
                         "src": "3739:7:64"
                       }
                     ],
-                    "id": 11307,
+                    "id": 11360,
                     "name": "VariableDeclaration",
                     "src": "3739:20:64"
                   },
@@ -4621,7 +4621,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "unstakeTime",
-                      "scope": 11315,
+                      "scope": 11368,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4634,12 +4634,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11308,
+                        "id": 11361,
                         "name": "ElementaryTypeName",
                         "src": "3761:7:64"
                       }
                     ],
-                    "id": 11309,
+                    "id": 11362,
                     "name": "VariableDeclaration",
                     "src": "3761:19:64"
                   },
@@ -4647,7 +4647,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "owner",
-                      "scope": 11315,
+                      "scope": 11368,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address payable",
@@ -4661,12 +4661,12 @@
                           "stateMutability": "payable",
                           "type": "address payable"
                         },
-                        "id": 11310,
+                        "id": 11363,
                         "name": "ElementaryTypeName",
                         "src": "3782:15:64"
                       }
                     ],
-                    "id": 11311,
+                    "id": 11364,
                     "name": "VariableDeclaration",
                     "src": "3782:21:64"
                   },
@@ -4674,7 +4674,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "state",
-                      "scope": 11315,
+                      "scope": 11368,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "enum IRelayHub.RelayState",
@@ -4686,25 +4686,25 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "RelayState",
-                          "referencedDeclaration": 11300,
+                          "referencedDeclaration": 11353,
                           "type": "enum IRelayHub.RelayState"
                         },
-                        "id": 11312,
+                        "id": 11365,
                         "name": "UserDefinedTypeName",
                         "src": "3805:10:64"
                       }
                     ],
-                    "id": 11313,
+                    "id": 11366,
                     "name": "VariableDeclaration",
                     "src": "3805:16:64"
                   }
                 ],
-                "id": 11314,
+                "id": 11367,
                 "name": "ParameterList",
                 "src": "3718:104:64"
               }
             ],
-            "id": 11315,
+            "id": 11368,
             "name": "FunctionDefinition",
             "src": "3663:160:64"
           },
@@ -4719,7 +4719,7 @@
                 null
               ],
               "name": "depositFor",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "external"
@@ -4731,7 +4731,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "target",
-                      "scope": 11320,
+                      "scope": 11373,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4745,17 +4745,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11316,
+                        "id": 11369,
                         "name": "ElementaryTypeName",
                         "src": "4133:7:64"
                       }
                     ],
-                    "id": 11317,
+                    "id": 11370,
                     "name": "VariableDeclaration",
                     "src": "4133:14:64"
                   }
                 ],
-                "id": 11318,
+                "id": 11371,
                 "name": "ParameterList",
                 "src": "4132:16:64"
               },
@@ -4766,12 +4766,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11319,
+                "id": 11372,
                 "name": "ParameterList",
                 "src": "4165:0:64"
               }
             ],
-            "id": 11320,
+            "id": 11373,
             "name": "FunctionDefinition",
             "src": "4113:53:64"
           },
@@ -4789,7 +4789,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "recipient",
-                      "scope": 11328,
+                      "scope": 11381,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4803,12 +4803,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11321,
+                        "id": 11374,
                         "name": "ElementaryTypeName",
                         "src": "4303:7:64"
                       }
                     ],
-                    "id": 11322,
+                    "id": 11375,
                     "name": "VariableDeclaration",
                     "src": "4303:25:64"
                   },
@@ -4817,7 +4817,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "from",
-                      "scope": 11328,
+                      "scope": 11381,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4831,12 +4831,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11323,
+                        "id": 11376,
                         "name": "ElementaryTypeName",
                         "src": "4330:7:64"
                       }
                     ],
-                    "id": 11324,
+                    "id": 11377,
                     "name": "VariableDeclaration",
                     "src": "4330:20:64"
                   },
@@ -4845,7 +4845,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "amount",
-                      "scope": 11328,
+                      "scope": 11381,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4858,22 +4858,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11325,
+                        "id": 11378,
                         "name": "ElementaryTypeName",
                         "src": "4352:7:64"
                       }
                     ],
-                    "id": 11326,
+                    "id": 11379,
                     "name": "VariableDeclaration",
                     "src": "4352:14:64"
                   }
                 ],
-                "id": 11327,
+                "id": 11380,
                 "name": "ParameterList",
                 "src": "4302:65:64"
               }
             ],
-            "id": 11328,
+            "id": 11381,
             "name": "EventDefinition",
             "src": "4287:81:64"
           },
@@ -4888,7 +4888,7 @@
                 null
               ],
               "name": "balanceOf",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -4900,7 +4900,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "target",
-                      "scope": 11335,
+                      "scope": 11388,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4914,17 +4914,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11329,
+                        "id": 11382,
                         "name": "ElementaryTypeName",
                         "src": "4521:7:64"
                       }
                     ],
-                    "id": 11330,
+                    "id": 11383,
                     "name": "VariableDeclaration",
                     "src": "4521:14:64"
                   }
                 ],
-                "id": 11331,
+                "id": 11384,
                 "name": "ParameterList",
                 "src": "4520:16:64"
               },
@@ -4934,7 +4934,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 11335,
+                      "scope": 11388,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4947,22 +4947,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11332,
+                        "id": 11385,
                         "name": "ElementaryTypeName",
                         "src": "4560:7:64"
                       }
                     ],
-                    "id": 11333,
+                    "id": 11386,
                     "name": "VariableDeclaration",
                     "src": "4560:7:64"
                   }
                 ],
-                "id": 11334,
+                "id": 11387,
                 "name": "ParameterList",
                 "src": "4559:9:64"
               }
             ],
-            "id": 11335,
+            "id": 11388,
             "name": "FunctionDefinition",
             "src": "4502:67:64"
           },
@@ -4977,7 +4977,7 @@
                 null
               ],
               "name": "withdraw",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "external"
@@ -4989,7 +4989,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "amount",
-                      "scope": 11342,
+                      "scope": 11395,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5002,12 +5002,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11336,
+                        "id": 11389,
                         "name": "ElementaryTypeName",
                         "src": "4824:7:64"
                       }
                     ],
-                    "id": 11337,
+                    "id": 11390,
                     "name": "VariableDeclaration",
                     "src": "4824:14:64"
                   },
@@ -5015,7 +5015,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "dest",
-                      "scope": 11342,
+                      "scope": 11395,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address payable",
@@ -5029,17 +5029,17 @@
                           "stateMutability": "payable",
                           "type": "address payable"
                         },
-                        "id": 11338,
+                        "id": 11391,
                         "name": "ElementaryTypeName",
                         "src": "4840:15:64"
                       }
                     ],
-                    "id": 11339,
+                    "id": 11392,
                     "name": "VariableDeclaration",
                     "src": "4840:20:64"
                   }
                 ],
-                "id": 11340,
+                "id": 11393,
                 "name": "ParameterList",
                 "src": "4823:38:64"
               },
@@ -5050,12 +5050,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11341,
+                "id": 11394,
                 "name": "ParameterList",
                 "src": "4870:0:64"
               }
             ],
-            "id": 11342,
+            "id": 11395,
             "name": "FunctionDefinition",
             "src": "4806:65:64"
           },
@@ -5073,7 +5073,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "account",
-                      "scope": 11350,
+                      "scope": 11403,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5087,12 +5087,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11343,
+                        "id": 11396,
                         "name": "ElementaryTypeName",
                         "src": "4978:7:64"
                       }
                     ],
-                    "id": 11344,
+                    "id": 11397,
                     "name": "VariableDeclaration",
                     "src": "4978:23:64"
                   },
@@ -5101,7 +5101,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "dest",
-                      "scope": 11350,
+                      "scope": 11403,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5115,12 +5115,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11345,
+                        "id": 11398,
                         "name": "ElementaryTypeName",
                         "src": "5003:7:64"
                       }
                     ],
-                    "id": 11346,
+                    "id": 11399,
                     "name": "VariableDeclaration",
                     "src": "5003:20:64"
                   },
@@ -5129,7 +5129,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "amount",
-                      "scope": 11350,
+                      "scope": 11403,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5142,22 +5142,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11347,
+                        "id": 11400,
                         "name": "ElementaryTypeName",
                         "src": "5025:7:64"
                       }
                     ],
-                    "id": 11348,
+                    "id": 11401,
                     "name": "VariableDeclaration",
                     "src": "5025:14:64"
                   }
                 ],
-                "id": 11349,
+                "id": 11402,
                 "name": "ParameterList",
                 "src": "4977:63:64"
               }
             ],
-            "id": 11350,
+            "id": 11403,
             "name": "EventDefinition",
             "src": "4962:79:64"
           },
@@ -5172,7 +5172,7 @@
                 null
               ],
               "name": "canRelay",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -5184,7 +5184,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "relay",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5198,12 +5198,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11351,
+                        "id": 11404,
                         "name": "ElementaryTypeName",
                         "src": "5609:7:64"
                       }
                     ],
-                    "id": 11352,
+                    "id": 11405,
                     "name": "VariableDeclaration",
                     "src": "5609:13:64"
                   },
@@ -5211,7 +5211,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "from",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5225,12 +5225,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11353,
+                        "id": 11406,
                         "name": "ElementaryTypeName",
                         "src": "5632:7:64"
                       }
                     ],
-                    "id": 11354,
+                    "id": 11407,
                     "name": "VariableDeclaration",
                     "src": "5632:12:64"
                   },
@@ -5238,7 +5238,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "to",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5252,12 +5252,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11355,
+                        "id": 11408,
                         "name": "ElementaryTypeName",
                         "src": "5654:7:64"
                       }
                     ],
-                    "id": 11356,
+                    "id": 11409,
                     "name": "VariableDeclaration",
                     "src": "5654:10:64"
                   },
@@ -5265,7 +5265,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "encodedFunction",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -5278,12 +5278,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11357,
+                        "id": 11410,
                         "name": "ElementaryTypeName",
                         "src": "5674:5:64"
                       }
                     ],
-                    "id": 11358,
+                    "id": 11411,
                     "name": "VariableDeclaration",
                     "src": "5674:30:64"
                   },
@@ -5291,7 +5291,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "transactionFee",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5304,12 +5304,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11359,
+                        "id": 11412,
                         "name": "ElementaryTypeName",
                         "src": "5714:7:64"
                       }
                     ],
-                    "id": 11360,
+                    "id": 11413,
                     "name": "VariableDeclaration",
                     "src": "5714:22:64"
                   },
@@ -5317,7 +5317,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "gasPrice",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5330,12 +5330,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11361,
+                        "id": 11414,
                         "name": "ElementaryTypeName",
                         "src": "5746:7:64"
                       }
                     ],
-                    "id": 11362,
+                    "id": 11415,
                     "name": "VariableDeclaration",
                     "src": "5746:16:64"
                   },
@@ -5343,7 +5343,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "gasLimit",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5356,12 +5356,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11363,
+                        "id": 11416,
                         "name": "ElementaryTypeName",
                         "src": "5772:7:64"
                       }
                     ],
-                    "id": 11364,
+                    "id": 11417,
                     "name": "VariableDeclaration",
                     "src": "5772:16:64"
                   },
@@ -5369,7 +5369,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "nonce",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5382,12 +5382,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11365,
+                        "id": 11418,
                         "name": "ElementaryTypeName",
                         "src": "5798:7:64"
                       }
                     ],
-                    "id": 11366,
+                    "id": 11419,
                     "name": "VariableDeclaration",
                     "src": "5798:13:64"
                   },
@@ -5395,7 +5395,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "signature",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -5408,12 +5408,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11367,
+                        "id": 11420,
                         "name": "ElementaryTypeName",
                         "src": "5821:5:64"
                       }
                     ],
-                    "id": 11368,
+                    "id": 11421,
                     "name": "VariableDeclaration",
                     "src": "5821:24:64"
                   },
@@ -5421,7 +5421,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "approvalData",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -5434,17 +5434,17 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11369,
+                        "id": 11422,
                         "name": "ElementaryTypeName",
                         "src": "5855:5:64"
                       }
                     ],
-                    "id": 11370,
+                    "id": 11423,
                     "name": "VariableDeclaration",
                     "src": "5855:27:64"
                   }
                 ],
-                "id": 11371,
+                "id": 11424,
                 "name": "ParameterList",
                 "src": "5599:289:64"
               },
@@ -5454,7 +5454,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "status",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5467,12 +5467,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11372,
+                        "id": 11425,
                         "name": "ElementaryTypeName",
                         "src": "5912:7:64"
                       }
                     ],
-                    "id": 11373,
+                    "id": 11426,
                     "name": "VariableDeclaration",
                     "src": "5912:14:64"
                   },
@@ -5480,7 +5480,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "recipientContext",
-                      "scope": 11377,
+                      "scope": 11430,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "bytes",
@@ -5493,22 +5493,22 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11374,
+                        "id": 11427,
                         "name": "ElementaryTypeName",
                         "src": "5928:5:64"
                       }
                     ],
-                    "id": 11375,
+                    "id": 11428,
                     "name": "VariableDeclaration",
                     "src": "5928:29:64"
                   }
                 ],
-                "id": 11376,
+                "id": 11429,
                 "name": "ParameterList",
                 "src": "5911:47:64"
               }
             ],
-            "id": 11377,
+            "id": 11430,
             "name": "FunctionDefinition",
             "src": "5582:377:64"
           },
@@ -5522,7 +5522,7 @@
                 "attributes": {
                   "name": "OK"
                 },
-                "id": 11378,
+                "id": 11431,
                 "name": "EnumValue",
                 "src": "6103:2:64"
               },
@@ -5530,7 +5530,7 @@
                 "attributes": {
                   "name": "WrongSignature"
                 },
-                "id": 11379,
+                "id": 11432,
                 "name": "EnumValue",
                 "src": "6185:14:64"
               },
@@ -5538,7 +5538,7 @@
                 "attributes": {
                   "name": "WrongNonce"
                 },
-                "id": 11380,
+                "id": 11433,
                 "name": "EnumValue",
                 "src": "6283:10:64"
               },
@@ -5546,7 +5546,7 @@
                 "attributes": {
                   "name": "AcceptRelayedCallReverted"
                 },
-                "id": 11381,
+                "id": 11434,
                 "name": "EnumValue",
                 "src": "6377:25:64"
               },
@@ -5554,12 +5554,12 @@
                 "attributes": {
                   "name": "InvalidRecipientStatusCode"
                 },
-                "id": 11382,
+                "id": 11435,
                 "name": "EnumValue",
                 "src": "6471:26:64"
               }
             ],
-            "id": 11383,
+            "id": 11436,
             "name": "EnumDefinition",
             "src": "6070:494:64"
           },
@@ -5574,7 +5574,7 @@
                 null
               ],
               "name": "relayCall",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "external"
@@ -5586,7 +5586,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "from",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5600,12 +5600,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11384,
+                        "id": 11437,
                         "name": "ElementaryTypeName",
                         "src": "8187:7:64"
                       }
                     ],
-                    "id": 11385,
+                    "id": 11438,
                     "name": "VariableDeclaration",
                     "src": "8187:12:64"
                   },
@@ -5613,7 +5613,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "to",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5627,12 +5627,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11386,
+                        "id": 11439,
                         "name": "ElementaryTypeName",
                         "src": "8209:7:64"
                       }
                     ],
-                    "id": 11387,
+                    "id": 11440,
                     "name": "VariableDeclaration",
                     "src": "8209:10:64"
                   },
@@ -5640,7 +5640,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "encodedFunction",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -5653,12 +5653,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11388,
+                        "id": 11441,
                         "name": "ElementaryTypeName",
                         "src": "8229:5:64"
                       }
                     ],
-                    "id": 11389,
+                    "id": 11442,
                     "name": "VariableDeclaration",
                     "src": "8229:30:64"
                   },
@@ -5666,7 +5666,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "transactionFee",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5679,12 +5679,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11390,
+                        "id": 11443,
                         "name": "ElementaryTypeName",
                         "src": "8269:7:64"
                       }
                     ],
-                    "id": 11391,
+                    "id": 11444,
                     "name": "VariableDeclaration",
                     "src": "8269:22:64"
                   },
@@ -5692,7 +5692,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "gasPrice",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5705,12 +5705,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11392,
+                        "id": 11445,
                         "name": "ElementaryTypeName",
                         "src": "8301:7:64"
                       }
                     ],
-                    "id": 11393,
+                    "id": 11446,
                     "name": "VariableDeclaration",
                     "src": "8301:16:64"
                   },
@@ -5718,7 +5718,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "gasLimit",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5731,12 +5731,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11394,
+                        "id": 11447,
                         "name": "ElementaryTypeName",
                         "src": "8327:7:64"
                       }
                     ],
-                    "id": 11395,
+                    "id": 11448,
                     "name": "VariableDeclaration",
                     "src": "8327:16:64"
                   },
@@ -5744,7 +5744,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "nonce",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5757,12 +5757,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11396,
+                        "id": 11449,
                         "name": "ElementaryTypeName",
                         "src": "8353:7:64"
                       }
                     ],
-                    "id": 11397,
+                    "id": 11450,
                     "name": "VariableDeclaration",
                     "src": "8353:13:64"
                   },
@@ -5770,7 +5770,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "signature",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -5783,12 +5783,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11398,
+                        "id": 11451,
                         "name": "ElementaryTypeName",
                         "src": "8376:5:64"
                       }
                     ],
-                    "id": 11399,
+                    "id": 11452,
                     "name": "VariableDeclaration",
                     "src": "8376:24:64"
                   },
@@ -5796,7 +5796,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "approvalData",
-                      "scope": 11404,
+                      "scope": 11457,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -5809,17 +5809,17 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11400,
+                        "id": 11453,
                         "name": "ElementaryTypeName",
                         "src": "8410:5:64"
                       }
                     ],
-                    "id": 11401,
+                    "id": 11454,
                     "name": "VariableDeclaration",
                     "src": "8410:27:64"
                   }
                 ],
-                "id": 11402,
+                "id": 11455,
                 "name": "ParameterList",
                 "src": "8177:266:64"
               },
@@ -5830,12 +5830,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11403,
+                "id": 11456,
                 "name": "ParameterList",
                 "src": "8452:0:64"
               }
             ],
-            "id": 11404,
+            "id": 11457,
             "name": "FunctionDefinition",
             "src": "8159:294:64"
           },
@@ -5853,7 +5853,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "relay",
-                      "scope": 11416,
+                      "scope": 11469,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5867,12 +5867,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11405,
+                        "id": 11458,
                         "name": "ElementaryTypeName",
                         "src": "8965:7:64"
                       }
                     ],
-                    "id": 11406,
+                    "id": 11459,
                     "name": "VariableDeclaration",
                     "src": "8965:21:64"
                   },
@@ -5881,7 +5881,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "from",
-                      "scope": 11416,
+                      "scope": 11469,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5895,12 +5895,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11407,
+                        "id": 11460,
                         "name": "ElementaryTypeName",
                         "src": "8988:7:64"
                       }
                     ],
-                    "id": 11408,
+                    "id": 11461,
                     "name": "VariableDeclaration",
                     "src": "8988:20:64"
                   },
@@ -5909,7 +5909,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "to",
-                      "scope": 11416,
+                      "scope": 11469,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -5923,12 +5923,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11409,
+                        "id": 11462,
                         "name": "ElementaryTypeName",
                         "src": "9010:7:64"
                       }
                     ],
-                    "id": 11410,
+                    "id": 11463,
                     "name": "VariableDeclaration",
                     "src": "9010:18:64"
                   },
@@ -5937,7 +5937,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "selector",
-                      "scope": 11416,
+                      "scope": 11469,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bytes4",
@@ -5950,12 +5950,12 @@
                           "name": "bytes4",
                           "type": "bytes4"
                         },
-                        "id": 11411,
+                        "id": 11464,
                         "name": "ElementaryTypeName",
                         "src": "9030:6:64"
                       }
                     ],
-                    "id": 11412,
+                    "id": 11465,
                     "name": "VariableDeclaration",
                     "src": "9030:15:64"
                   },
@@ -5964,7 +5964,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "reason",
-                      "scope": 11416,
+                      "scope": 11469,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -5977,22 +5977,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11413,
+                        "id": 11466,
                         "name": "ElementaryTypeName",
                         "src": "9047:7:64"
                       }
                     ],
-                    "id": 11414,
+                    "id": 11467,
                     "name": "VariableDeclaration",
                     "src": "9047:14:64"
                   }
                 ],
-                "id": 11415,
+                "id": 11468,
                 "name": "ParameterList",
                 "src": "8964:98:64"
               }
             ],
-            "id": 11416,
+            "id": 11469,
             "name": "EventDefinition",
             "src": "8944:119:64"
           },
@@ -6010,7 +6010,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "relay",
-                      "scope": 11430,
+                      "scope": 11483,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -6024,12 +6024,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11417,
+                        "id": 11470,
                         "name": "ElementaryTypeName",
                         "src": "9468:7:64"
                       }
                     ],
-                    "id": 11418,
+                    "id": 11471,
                     "name": "VariableDeclaration",
                     "src": "9468:21:64"
                   },
@@ -6038,7 +6038,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "from",
-                      "scope": 11430,
+                      "scope": 11483,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -6052,12 +6052,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11419,
+                        "id": 11472,
                         "name": "ElementaryTypeName",
                         "src": "9491:7:64"
                       }
                     ],
-                    "id": 11420,
+                    "id": 11473,
                     "name": "VariableDeclaration",
                     "src": "9491:20:64"
                   },
@@ -6066,7 +6066,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "to",
-                      "scope": 11430,
+                      "scope": 11483,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -6080,12 +6080,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11421,
+                        "id": 11474,
                         "name": "ElementaryTypeName",
                         "src": "9513:7:64"
                       }
                     ],
-                    "id": 11422,
+                    "id": 11475,
                     "name": "VariableDeclaration",
                     "src": "9513:18:64"
                   },
@@ -6094,7 +6094,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "selector",
-                      "scope": 11430,
+                      "scope": 11483,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bytes4",
@@ -6107,12 +6107,12 @@
                           "name": "bytes4",
                           "type": "bytes4"
                         },
-                        "id": 11423,
+                        "id": 11476,
                         "name": "ElementaryTypeName",
                         "src": "9533:6:64"
                       }
                     ],
-                    "id": 11424,
+                    "id": 11477,
                     "name": "VariableDeclaration",
                     "src": "9533:15:64"
                   },
@@ -6121,7 +6121,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "status",
-                      "scope": 11430,
+                      "scope": 11483,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "enum IRelayHub.RelayCallStatus",
@@ -6133,15 +6133,15 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "RelayCallStatus",
-                          "referencedDeclaration": 11436,
+                          "referencedDeclaration": 11489,
                           "type": "enum IRelayHub.RelayCallStatus"
                         },
-                        "id": 11425,
+                        "id": 11478,
                         "name": "UserDefinedTypeName",
                         "src": "9550:15:64"
                       }
                     ],
-                    "id": 11426,
+                    "id": 11479,
                     "name": "VariableDeclaration",
                     "src": "9550:22:64"
                   },
@@ -6150,7 +6150,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "charge",
-                      "scope": 11430,
+                      "scope": 11483,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6163,22 +6163,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11427,
+                        "id": 11480,
                         "name": "ElementaryTypeName",
                         "src": "9574:7:64"
                       }
                     ],
-                    "id": 11428,
+                    "id": 11481,
                     "name": "VariableDeclaration",
                     "src": "9574:14:64"
                   }
                 ],
-                "id": 11429,
+                "id": 11482,
                 "name": "ParameterList",
                 "src": "9467:122:64"
               }
             ],
-            "id": 11430,
+            "id": 11483,
             "name": "EventDefinition",
             "src": "9443:147:64"
           },
@@ -6192,7 +6192,7 @@
                 "attributes": {
                   "name": "OK"
                 },
-                "id": 11431,
+                "id": 11484,
                 "name": "EnumValue",
                 "src": "9686:2:64"
               },
@@ -6200,7 +6200,7 @@
                 "attributes": {
                   "name": "RelayedCallFailed"
                 },
-                "id": 11432,
+                "id": 11485,
                 "name": "EnumValue",
                 "src": "9818:17:64"
               },
@@ -6208,7 +6208,7 @@
                 "attributes": {
                   "name": "PreRelayedFailed"
                 },
-                "id": 11433,
+                "id": 11486,
                 "name": "EnumValue",
                 "src": "9911:16:64"
               },
@@ -6216,7 +6216,7 @@
                 "attributes": {
                   "name": "PostRelayedFailed"
                 },
-                "id": 11434,
+                "id": 11487,
                 "name": "EnumValue",
                 "src": "10011:17:64"
               },
@@ -6224,12 +6224,12 @@
                 "attributes": {
                   "name": "RecipientBalanceChanged"
                 },
-                "id": 11435,
+                "id": 11488,
                 "name": "EnumValue",
                 "src": "10121:23:64"
               }
             ],
-            "id": 11436,
+            "id": 11489,
             "name": "EnumDefinition",
             "src": "9655:580:64"
           },
@@ -6244,7 +6244,7 @@
                 null
               ],
               "name": "requiredGas",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -6256,7 +6256,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "relayedCallStipend",
-                      "scope": 11443,
+                      "scope": 11496,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6269,17 +6269,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11437,
+                        "id": 11490,
                         "name": "ElementaryTypeName",
                         "src": "10444:7:64"
                       }
                     ],
-                    "id": 11438,
+                    "id": 11491,
                     "name": "VariableDeclaration",
                     "src": "10444:26:64"
                   }
                 ],
-                "id": 11439,
+                "id": 11492,
                 "name": "ParameterList",
                 "src": "10443:28:64"
               },
@@ -6289,7 +6289,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 11443,
+                      "scope": 11496,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6302,22 +6302,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11440,
+                        "id": 11493,
                         "name": "ElementaryTypeName",
                         "src": "10495:7:64"
                       }
                     ],
-                    "id": 11441,
+                    "id": 11494,
                     "name": "VariableDeclaration",
                     "src": "10495:7:64"
                   }
                 ],
-                "id": 11442,
+                "id": 11495,
                 "name": "ParameterList",
                 "src": "10494:9:64"
               }
             ],
-            "id": 11443,
+            "id": 11496,
             "name": "FunctionDefinition",
             "src": "10423:81:64"
           },
@@ -6332,7 +6332,7 @@
                 null
               ],
               "name": "maxPossibleCharge",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -6344,7 +6344,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "relayedCallStipend",
-                      "scope": 11454,
+                      "scope": 11507,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6357,12 +6357,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11444,
+                        "id": 11497,
                         "name": "ElementaryTypeName",
                         "src": "10663:7:64"
                       }
                     ],
-                    "id": 11445,
+                    "id": 11498,
                     "name": "VariableDeclaration",
                     "src": "10663:26:64"
                   },
@@ -6370,7 +6370,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "gasPrice",
-                      "scope": 11454,
+                      "scope": 11507,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6383,12 +6383,12 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11446,
+                        "id": 11499,
                         "name": "ElementaryTypeName",
                         "src": "10691:7:64"
                       }
                     ],
-                    "id": 11447,
+                    "id": 11500,
                     "name": "VariableDeclaration",
                     "src": "10691:16:64"
                   },
@@ -6396,7 +6396,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "transactionFee",
-                      "scope": 11454,
+                      "scope": 11507,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6409,17 +6409,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11448,
+                        "id": 11501,
                         "name": "ElementaryTypeName",
                         "src": "10709:7:64"
                       }
                     ],
-                    "id": 11449,
+                    "id": 11502,
                     "name": "VariableDeclaration",
                     "src": "10709:22:64"
                   }
                 ],
-                "id": 11450,
+                "id": 11503,
                 "name": "ParameterList",
                 "src": "10662:70:64"
               },
@@ -6429,7 +6429,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 11454,
+                      "scope": 11507,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6442,22 +6442,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11451,
+                        "id": 11504,
                         "name": "ElementaryTypeName",
                         "src": "10756:7:64"
                       }
                     ],
-                    "id": 11452,
+                    "id": 11505,
                     "name": "VariableDeclaration",
                     "src": "10756:7:64"
                   }
                 ],
-                "id": 11453,
+                "id": 11506,
                 "name": "ParameterList",
                 "src": "10755:9:64"
               }
             ],
-            "id": 11454,
+            "id": 11507,
             "name": "FunctionDefinition",
             "src": "10636:129:64"
           },
@@ -6472,7 +6472,7 @@
                 null
               ],
               "name": "penalizeRepeatedNonce",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "external"
@@ -6484,7 +6484,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "unsignedTx1",
-                      "scope": 11465,
+                      "scope": 11518,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -6497,12 +6497,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11455,
+                        "id": 11508,
                         "name": "ElementaryTypeName",
                         "src": "11395:5:64"
                       }
                     ],
-                    "id": 11456,
+                    "id": 11509,
                     "name": "VariableDeclaration",
                     "src": "11395:26:64"
                   },
@@ -6510,7 +6510,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "signature1",
-                      "scope": 11465,
+                      "scope": 11518,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -6523,12 +6523,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11457,
+                        "id": 11510,
                         "name": "ElementaryTypeName",
                         "src": "11423:5:64"
                       }
                     ],
-                    "id": 11458,
+                    "id": 11511,
                     "name": "VariableDeclaration",
                     "src": "11423:25:64"
                   },
@@ -6536,7 +6536,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "unsignedTx2",
-                      "scope": 11465,
+                      "scope": 11518,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -6549,12 +6549,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11459,
+                        "id": 11512,
                         "name": "ElementaryTypeName",
                         "src": "11450:5:64"
                       }
                     ],
-                    "id": 11460,
+                    "id": 11513,
                     "name": "VariableDeclaration",
                     "src": "11450:26:64"
                   },
@@ -6562,7 +6562,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "signature2",
-                      "scope": 11465,
+                      "scope": 11518,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -6575,17 +6575,17 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11461,
+                        "id": 11514,
                         "name": "ElementaryTypeName",
                         "src": "11478:5:64"
                       }
                     ],
-                    "id": 11462,
+                    "id": 11515,
                     "name": "VariableDeclaration",
                     "src": "11478:25:64"
                   }
                 ],
-                "id": 11463,
+                "id": 11516,
                 "name": "ParameterList",
                 "src": "11394:110:64"
               },
@@ -6596,12 +6596,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11464,
+                "id": 11517,
                 "name": "ParameterList",
                 "src": "11513:0:64"
               }
             ],
-            "id": 11465,
+            "id": 11518,
             "name": "FunctionDefinition",
             "src": "11364:150:64"
           },
@@ -6616,7 +6616,7 @@
                 null
               ],
               "name": "penalizeIllegalTransaction",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "external"
@@ -6628,7 +6628,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "unsignedTx",
-                      "scope": 11472,
+                      "scope": 11525,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -6641,12 +6641,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11466,
+                        "id": 11519,
                         "name": "ElementaryTypeName",
                         "src": "11689:5:64"
                       }
                     ],
-                    "id": 11467,
+                    "id": 11520,
                     "name": "VariableDeclaration",
                     "src": "11689:25:64"
                   },
@@ -6654,7 +6654,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "signature",
-                      "scope": 11472,
+                      "scope": 11525,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "bytes",
@@ -6667,17 +6667,17 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 11468,
+                        "id": 11521,
                         "name": "ElementaryTypeName",
                         "src": "11716:5:64"
                       }
                     ],
-                    "id": 11469,
+                    "id": 11522,
                     "name": "VariableDeclaration",
                     "src": "11716:24:64"
                   }
                 ],
-                "id": 11470,
+                "id": 11523,
                 "name": "ParameterList",
                 "src": "11688:53:64"
               },
@@ -6688,12 +6688,12 @@
                   ]
                 },
                 "children": [],
-                "id": 11471,
+                "id": 11524,
                 "name": "ParameterList",
                 "src": "11750:0:64"
               }
             ],
-            "id": 11472,
+            "id": 11525,
             "name": "FunctionDefinition",
             "src": "11653:98:64"
           },
@@ -6711,7 +6711,7 @@
                       "constant": false,
                       "indexed": true,
                       "name": "relay",
-                      "scope": 11480,
+                      "scope": 11533,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -6725,12 +6725,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11473,
+                        "id": 11526,
                         "name": "ElementaryTypeName",
                         "src": "11836:7:64"
                       }
                     ],
-                    "id": 11474,
+                    "id": 11527,
                     "name": "VariableDeclaration",
                     "src": "11836:21:64"
                   },
@@ -6739,7 +6739,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "sender",
-                      "scope": 11480,
+                      "scope": 11533,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -6753,12 +6753,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11475,
+                        "id": 11528,
                         "name": "ElementaryTypeName",
                         "src": "11859:7:64"
                       }
                     ],
-                    "id": 11476,
+                    "id": 11529,
                     "name": "VariableDeclaration",
                     "src": "11859:14:64"
                   },
@@ -6767,7 +6767,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "amount",
-                      "scope": 11480,
+                      "scope": 11533,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6780,22 +6780,22 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11477,
+                        "id": 11530,
                         "name": "ElementaryTypeName",
                         "src": "11875:7:64"
                       }
                     ],
-                    "id": 11478,
+                    "id": 11531,
                     "name": "VariableDeclaration",
                     "src": "11875:14:64"
                   }
                 ],
-                "id": 11479,
+                "id": 11532,
                 "name": "ParameterList",
                 "src": "11835:55:64"
               }
             ],
-            "id": 11480,
+            "id": 11533,
             "name": "EventDefinition",
             "src": "11820:71:64"
           },
@@ -6810,7 +6810,7 @@
                 null
               ],
               "name": "getNonce",
-              "scope": 11488,
+              "scope": 11541,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -6822,7 +6822,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "from",
-                      "scope": 11487,
+                      "scope": 11540,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -6836,17 +6836,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 11481,
+                        "id": 11534,
                         "name": "ElementaryTypeName",
                         "src": "11985:7:64"
                       }
                     ],
-                    "id": 11482,
+                    "id": 11535,
                     "name": "VariableDeclaration",
                     "src": "11985:12:64"
                   }
                 ],
-                "id": 11483,
+                "id": 11536,
                 "name": "ParameterList",
                 "src": "11984:14:64"
               },
@@ -6856,7 +6856,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 11487,
+                      "scope": 11540,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -6869,32 +6869,32 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 11484,
+                        "id": 11537,
                         "name": "ElementaryTypeName",
                         "src": "12022:7:64"
                       }
                     ],
-                    "id": 11485,
+                    "id": 11538,
                     "name": "VariableDeclaration",
                     "src": "12022:7:64"
                   }
                 ],
-                "id": 11486,
+                "id": 11539,
                 "name": "ParameterList",
                 "src": "12021:9:64"
               }
             ],
-            "id": 11487,
+            "id": 11540,
             "name": "FunctionDefinition",
             "src": "11967:64:64"
           }
         ],
-        "id": 11488,
+        "id": 11541,
         "name": "ContractDefinition",
         "src": "355:11678:64"
       }
     ],
-    "id": 11489,
+    "id": 11542,
     "name": "SourceUnit",
     "src": "0:12035:64"
   },
@@ -6904,7 +6904,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-05T08:07:36.172Z",
+  "updatedAt": "2021-11-05T11:19:21.479Z",
   "devdoc": {
     "details": "Interface for `RelayHub`, the core contract of the GSN. Users should not need to interact with this contract directly. * See the https://github.com/OpenZeppelin/openzeppelin-gsn-helpers[OpenZeppelin GSN helpers] for more information on how to deploy an instance of `RelayHub` on your local test network.",
     "methods": {

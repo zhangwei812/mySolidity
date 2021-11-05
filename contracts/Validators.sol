@@ -1028,4 +1028,12 @@ IValidators2
     {
         return groups[account].members.list;
     }
+
+    function getFirstGroupValidators()
+    external
+    view
+    returns (address[] memory)
+    {
+        return groups[registeredGroups[0]].members.list;
+    }
 }

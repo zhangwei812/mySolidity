@@ -382,9 +382,20 @@ Console
         pendingVote.epoch = getEpochNumber();
     }
 
-
-    function electValidatorSigners(address group) external  returns (address[] memory) {
+    function getElectableValidators() external view returns (uint256, uint256) {
+        return (uint256(4), uint256(4));
+    }
+    //新的
+    function electValidatorSigners(address group) external returns (address[] memory) {
         return getValidators().getGroupValidators(group, electableValidators.max);
+    }
+    // 选当前的
+    function electNValidatorSigners(uint256 minElectableValidators, uint256 maxElectableValidators)
+    public
+    view
+    returns (address[] memory)
+    {
+        return getValidators().getFirstGroupValidators();
     }
 
     function getTotalVotes() public view returns (uint256) {
