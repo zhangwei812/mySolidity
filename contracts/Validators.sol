@@ -2,6 +2,7 @@ pragma solidity ^0.5.13;
 
 import "./openzeppelin-solidity/contracts/math/Math.sol";
 import "./openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "./openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "./Initializable.sol";
 import "./IAccounts.sol";
 import "./IRegistry.sol";
@@ -11,399 +12,6 @@ import "./IValidators.sol";
 import "./IValidators2.sol";
 import "./Console.sol";
 
-library LinkedList {
-    using SafeMath for uint256;
-
-    struct Element {
-        bytes32 previousKey;
-        bytes32 nextKey;
-        bool exists;
-    }
-
-    struct List {
-        bytes32 head;
-        bytes32 tail;
-        uint256 numElements;
-        mapping(bytes32 => Element) elements;
-    }
-
-    /**
-     * @notice Inserts an element into a doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The key of the element to insert.
-     * @param previousKey The key of the element that comes before the element to insert.
-     * @param nextKey The key of the element that comes after the element to insert.
-     */
-    function insert(List storage list, bytes32 key, bytes32 previousKey, bytes32 nextKey) internal {
-        require(key != bytes32(0), "Key must be defined");
-        require(!contains(list, key), "Can't insert an existing element");
-        require(
-            previousKey != key && nextKey != key,
-            "Key cannot be the same as previousKey or nextKey"
-        );
-
-        Element storage element = list.elements[key];
-        element.exists = true;
-
-        if (list.numElements == 0) {
-            list.tail = key;
-            list.head = key;
-        } else {
-            require(
-                previousKey != bytes32(0) || nextKey != bytes32(0),
-                "Either previousKey or nextKey must be defined"
-            );
-
-            element.previousKey = previousKey;
-            element.nextKey = nextKey;
-
-            if (previousKey != bytes32(0)) {
-                require(
-                    contains(list, previousKey),
-                    "If previousKey is defined, it must exist in the list"
-                );
-                Element storage previousElement = list.elements[previousKey];
-                require(previousElement.nextKey == nextKey, "previousKey must be adjacent to nextKey");
-                previousElement.nextKey = key;
-            } else {
-                list.tail = key;
-            }
-
-            if (nextKey != bytes32(0)) {
-                require(contains(list, nextKey), "If nextKey is defined, it must exist in the list");
-                Element storage nextElement = list.elements[nextKey];
-                require(nextElement.previousKey == previousKey, "previousKey must be adjacent to nextKey");
-                nextElement.previousKey = key;
-            } else {
-                list.head = key;
-            }
-        }
-
-        list.numElements = list.numElements.add(1);
-    }
-
-    /**
-     * @notice Inserts an element at the tail of the doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The key of the element to insert.
-     */
-    function push(List storage list, bytes32 key) internal {
-        insert(list, key, bytes32(0), list.tail);
-    }
-
-    /**
-     * @notice Removes an element from the doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The key of the element to remove.
-     */
-    function remove(List storage list, bytes32 key) internal {
-        Element storage element = list.elements[key];
-        require(key != bytes32(0) && contains(list, key), "key not in list");
-        if (element.previousKey != bytes32(0)) {
-            Element storage previousElement = list.elements[element.previousKey];
-            previousElement.nextKey = element.nextKey;
-        } else {
-            list.tail = element.nextKey;
-        }
-
-        if (element.nextKey != bytes32(0)) {
-            Element storage nextElement = list.elements[element.nextKey];
-            nextElement.previousKey = element.previousKey;
-        } else {
-            list.head = element.previousKey;
-        }
-
-        delete list.elements[key];
-        list.numElements = list.numElements.sub(1);
-    }
-
-    /**
-     * @notice Updates an element in the list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The element key.
-     * @param previousKey The key of the element that comes before the updated element.
-     * @param nextKey The key of the element that comes after the updated element.
-     */
-    function update(List storage list, bytes32 key, bytes32 previousKey, bytes32 nextKey) internal {
-        require(
-            key != bytes32(0) && key != previousKey && key != nextKey && contains(list, key),
-            "key on in list"
-        );
-        remove(list, key);
-        insert(list, key, previousKey, nextKey);
-    }
-
-    /**
-     * @notice Returns whether or not a particular key is present in the sorted list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The element key.
-     * @return Whether or not the key is in the sorted list.
-     */
-    function contains(List storage list, bytes32 key) internal view returns (bool) {
-        return list.elements[key].exists;
-    }
-
-    /**
-     * @notice Returns the keys of the N elements at the head of the list.
-     * @param list A storage pointer to the underlying list.
-     * @param n The number of elements to return.
-     * @return The keys of the N elements at the head of the list.
-     * @dev Reverts if n is greater than the number of elements in the list.
-     */
-    function headN(List storage list, uint256 n) internal view returns (bytes32[] memory) {
-        require(n <= list.numElements, "not enough elements");
-        bytes32[] memory keys = new bytes32[](n);
-        bytes32 key = list.head;
-        for (uint256 i = 0; i < n; i = i.add(1)) {
-            keys[i] = key;
-            key = list.elements[key].previousKey;
-        }
-        return keys;
-    }
-
-    /**
-     * @notice Gets all element keys from the doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @return All element keys from head to tail.
-     */
-    function getKeys(List storage list) internal view returns (bytes32[] memory) {
-        return headN(list, list.numElements);
-    }
-}
-
-library AddressLinkedList {
-    using LinkedList for LinkedList.List;
-    using SafeMath for uint256;
-
-    function toBytes(address a) public pure returns (bytes32) {
-        return bytes32(uint256(a) << 96);
-    }
-
-    function toAddress(bytes32 b) public pure returns (address) {
-        return address(uint256(b) >> 96);
-    }
-
-    /**
-     * @notice Inserts an element into a doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The key of the element to insert.
-     * @param previousKey The key of the element that comes before the element to insert.
-     * @param nextKey The key of the element that comes after the element to insert.
-     */
-    function insert(LinkedList.List storage list, address key, address previousKey, address nextKey)
-    public
-    {
-        list.insert(toBytes(key), toBytes(previousKey), toBytes(nextKey));
-    }
-
-    /**
-     * @notice Inserts an element at the end of the doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The key of the element to insert.
-     */
-    function push(LinkedList.List storage list, address key) public {
-        list.insert(toBytes(key), bytes32(0), list.tail);
-    }
-
-    /**
-     * @notice Removes an element from the doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The key of the element to remove.
-     */
-    function remove(LinkedList.List storage list, address key) public {
-        list.remove(toBytes(key));
-    }
-
-    /**
-     * @notice Updates an element in the list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The element key.
-     * @param previousKey The key of the element that comes before the updated element.
-     * @param nextKey The key of the element that comes after the updated element.
-     */
-    function update(LinkedList.List storage list, address key, address previousKey, address nextKey)
-    public
-    {
-        list.update(toBytes(key), toBytes(previousKey), toBytes(nextKey));
-    }
-
-    /**
-     * @notice Returns whether or not a particular key is present in the sorted list.
-     * @param list A storage pointer to the underlying list.
-     * @param key The element key.
-     * @return Whether or not the key is in the sorted list.
-     */
-    function contains(LinkedList.List storage list, address key) public view returns (bool) {
-        return list.elements[toBytes(key)].exists;
-    }
-
-    /**
-     * @notice Returns the N greatest elements of the list.
-     * @param list A storage pointer to the underlying list.
-     * @param n The number of elements to return.
-     * @return The keys of the greatest elements.
-     * @dev Reverts if n is greater than the number of elements in the list.
-     */
-    function headN(LinkedList.List storage list, uint256 n) public view returns (address[] memory) {
-        bytes32[] memory byteKeys = list.headN(n);
-        address[] memory keys = new address[](n);
-        for (uint256 i = 0; i < n; i = i.add(1)) {
-            keys[i] = toAddress(byteKeys[i]);
-        }
-        return keys;
-    }
-
-    /**
-     * @notice Gets all element keys from the doubly linked list.
-     * @param list A storage pointer to the underlying list.
-     * @return All element keys from head to tail.
-     */
-    function getKeys(LinkedList.List storage list) public view returns (address[] memory) {
-        return headN(list, list.numElements);
-    }
-}
-
-library SafeMath {
-    /**
-     * @dev Returns the addition of two unsigned integers, reverting on
-     * overflow.
-     *
-     * Counterpart to Solidity's `+` operator.
-     *
-     * Requirements:
-     * - Addition cannot overflow.
-     */
-    function add(uint256 a, uint256 b) internal pure returns (uint256) {
-        uint256 c = a + b;
-        require(c >= a, "SafeMath: addition overflow");
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the subtraction of two unsigned integers, reverting on
-     * overflow (when the result is negative).
-     *
-     * Counterpart to Solidity's `-` operator.
-     *
-     * Requirements:
-     * - Subtraction cannot overflow.
-     */
-    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        return sub(a, b, "SafeMath: subtraction overflow");
-    }
-
-    /**
-     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
-     * overflow (when the result is negative).
-     *
-     * Counterpart to Solidity's `-` operator.
-     *
-     * Requirements:
-     * - Subtraction cannot overflow.
-     *
-     * _Available since v2.4.0._
-     */
-    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        require(b <= a, errorMessage);
-        uint256 c = a - b;
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the multiplication of two unsigned integers, reverting on
-     * overflow.
-     *
-     * Counterpart to Solidity's `*` operator.
-     *
-     * Requirements:
-     * - Multiplication cannot overflow.
-     */
-    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
-        // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
-        // benefit is lost if 'b' is also tested.
-        // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
-        if (a == 0) {
-            return 0;
-        }
-
-        uint256 c = a * b;
-        require(c / a == b, "SafeMath: multiplication overflow");
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the integer division of two unsigned integers. Reverts on
-     * division by zero. The result is rounded towards zero.
-     *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
-     * `revert` opcode (which leaves remaining gas untouched) while Solidity
-     * uses an invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-     */
-    function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        return div(a, b, "SafeMath: division by zero");
-    }
-
-    /**
-     * @dev Returns the integer division of two unsigned integers. Reverts with custom message on
-     * division by zero. The result is rounded towards zero.
-     *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
-     * `revert` opcode (which leaves remaining gas untouched) while Solidity
-     * uses an invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-     *
-     * _Available since v2.4.0._
-     */
-    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        // Solidity only automatically asserts when dividing by 0
-        require(b > 0, errorMessage);
-        uint256 c = a / b;
-        // assert(a == b * c + a % b); // There is no case in which this doesn't hold
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
-     * Reverts when dividing by zero.
-     *
-     * Counterpart to Solidity's `%` operator. This function uses a `revert`
-     * opcode (which leaves remaining gas untouched) while Solidity uses an
-     * invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-     */
-    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
-        return mod(a, b, "SafeMath: modulo by zero");
-    }
-
-    /**
-     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
-     * Reverts with custom message when dividing by zero.
-     *
-     * Counterpart to Solidity's `%` operator. This function uses a `revert`
-     * opcode (which leaves remaining gas untouched) while Solidity uses an
-     * invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-     *
-     * _Available since v2.4.0._
-     */
-    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        require(b != 0, errorMessage);
-        return a % b;
-    }
-}
 
 library BytesLib {
     function concat(
@@ -986,38 +594,28 @@ library FixidityLib {
 
 contract UsingRegistry is Ownable {
     event RegistrySet(address indexed registryAddress);
-
     // solhint-disable state-visibility
     bytes32 constant ACCOUNTS_REGISTRY_ID = keccak256(abi.encodePacked("Accounts"));
-
     bytes32 constant VALIDATORS_REGISTRY_ID = keccak256(abi.encodePacked("Validators"));
     bytes32 constant LOCKED_GOLD_REGISTRY_ID = keccak256(abi.encodePacked("LockedGold"));
     bytes32 constant ELECTION_REGISTRY_ID = keccak256(abi.encodePacked("Election"));
     // solhint-enable state-visibility
-
     IRegistry public registry;
 
-    /**
-     * @notice Updates the address pointing to a Registry contract.
-     * @param registryAddress The address of a registry contract for routing to other contracts.
-     */
     function setRegistry(address registryAddress) public onlyOwner {
         require(registryAddress != address(0), "Cannot register the null address");
         registry = IRegistry(registryAddress);
         emit RegistrySet(registryAddress);
     }
 
-    //-------------------
     function getAccounts() internal view returns (IAccounts) {
         return IAccounts(registry.getAddressForOrDie(ACCOUNTS_REGISTRY_ID));
+        // 需要添加Accounts合約
     }
 
-    //-------------------
     function getLockedGold() internal view returns (ILockedGold) {
         return ILockedGold(registry.getAddressForOrDie(LOCKED_GOLD_REGISTRY_ID));
     }
-
-
 }
 
 contract UsingPrecompiles {
@@ -1089,7 +687,6 @@ Console,
 IValidators2
 {
     using FixidityLib for FixidityLib.Fraction;
-    using AddressLinkedList for LinkedList.List;
     using SafeMath for uint256;
     using BytesLib for bytes;
 
@@ -1098,9 +695,14 @@ IValidators2
         uint256 duration;
     }
 
+    struct membersinfo {
+        mapping(address => bool) member;
+        uint256 numElements;
+    }
+
     struct ValidatorGroup {
         bool exists;
-        LinkedList.List members;
+        membersinfo members;
         FixidityLib.Fraction commission;
         FixidityLib.Fraction nextCommission;
         uint256 nextCommissionBlock;
@@ -1190,7 +792,7 @@ IValidators2
         if (validator.affiliation != address(0)) {
             // 1.是组成员不能注销
             require(
-                !groups[validator.affiliation].members.contains(account),
+                !(groups[validator.affiliation].members.member[account]),
                 "Has been group member recently"
             );
         }
@@ -1277,48 +879,14 @@ IValidators2
     }
 
     function addMember(address validator) external returns (bool) {
-//        //        address account = getAccounts().validatorSignerToAccount(msg.sender);
-//        address account = msg.sender;
-//        //        require(groups[account].members.numElements > 0, "Validator group empty");
-//        return _addMember(account, validator, address(0), address(0));
-        return true ;
-    }
-    // 0x0000000000000000000000000000000000000000   0x40个0
-    function addFirstMember(address validator, address lesser, address greater)
-    external
-    returns (bool)
-    {
-        // log("account",msg.sender);
-        ////        address account = getAccounts().validatorSignerToAccount(msg.sender); zhangwei
-        //        address account = msg.sender;
-        ////        require(groups[account].members.numElements == 0, "Validator group not empty");
-        //        return _addMember(account, validator, lesser, greater);
+        address account = getAccounts().validatorSignerToAccount(msg.sender);
+        ValidatorGroup storage _group = groups[account];
+        _group.members.numElements.add(1);
+        _group.members.member[validator] = true;
         return true;
     }
 
-    function _addMember(address group, address validator, address lesser, address greater)
-    private
-    returns (bool)
-    {
-        log("_addMember group", group);
-        //        require(isValidatorGroup(group) && isValidator(validator), "Not validator and group");
-        ValidatorGroup storage _group = groups[group];
-        //        require(_group.members.numElements < maxGroupSize, "group would exceed maximum size");
-        //        require(validators[validator].affiliation == group, "Not affiliated to group");
-        //        require(!_group.members.contains(validator), "Already in group");
-        uint256 numMembers = _group.members.numElements.add(1);
-        _group.members.push(validator);
-        log("numMembers", numMembers);
-        //        require(meetsAccountLockedGoldRequirements(group), "Group requirements not met");
-        //        require(meetsAccountLockedGoldRequirements(validator), "Validator requirements not met");
-        //        if (numMembers == 1) {
-        //            getElection().markGroupEligible(group, lesser, greater);
-        //        }
-        //        updateMembershipHistory(validator, group);
-        //        updateSizeHistory(group, numMembers.sub(1));
 
-        return true;
-    }
 
     function removeMember(address validator) external returns (bool) {
         address account = getAccounts().validatorSignerToAccount(msg.sender);
@@ -1357,8 +925,6 @@ IValidators2
     }
 
     function isValidator(address account) public view returns (bool) {
-        //        return validators[account].publicKeys.bls.length > 0;
-
         return validators[account].exists;
     }
 
@@ -1373,16 +939,15 @@ IValidators2
     function _removeMember(address group, address validator) private returns (bool) {
         ValidatorGroup storage _group = groups[group];
         require(validators[validator].affiliation == group, "Not affiliated to group");
-        require(_group.members.contains(validator), "Not a member of the group");
-        _group.members.remove(validator);
+        require((_group.members.member[validator]==true), "Not a member of the group");
+        _group.members.member[validator]==false;
         uint256 numMembers = _group.members.numElements;
         // Empty validator groups are not electable.
         if (numMembers == 0) {
             getElection().markGroupIneligible(group);
+            return true ;
         }
-        updateMembershipHistory(validator, address(0));
-        updateSizeHistory(group, numMembers.add(1));
-
+        _group.members.numElements.sub(1);
         return true;
     }
 
@@ -1439,8 +1004,8 @@ IValidators2
     {
         address affiliation = validator.affiliation;
         ValidatorGroup storage group = groups[affiliation];
-        if (group.members.contains(validatorAccount)) {
-            _removeMember(affiliation, validatorAccount);
+        if (group.members.member[validatorAccount]) {
+            group.members.member[validatorAccount] = false;
         }
         validator.affiliation = address(0);
         return true;

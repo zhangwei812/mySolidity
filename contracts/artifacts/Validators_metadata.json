@@ -170,37 +170,6 @@
 						"internalType": "address",
 						"name": "validator",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "lesser",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "greater",
-						"type": "address"
-					}
-				],
-				"name": "addFirstMember",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "validator",
-						"type": "address"
 					}
 				],
 				"name": "addMember",
@@ -427,11 +396,11 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
+				"constant": false,
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "groupaddr",
 						"type": "address"
 					},
 					{
@@ -449,7 +418,7 @@
 					}
 				],
 				"payable": false,
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -783,22 +752,13 @@
 				"renounceOwnership()": {
 					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
 				},
-				"setRegistry(address)": {
-					"params": {
-						"registryAddress": "The address of a registry contract for routing to other contracts."
-					}
-				},
 				"transferOwnership(address)": {
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				}
 			}
 		},
 		"userdoc": {
-			"methods": {
-				"setRegistry(address)": {
-					"notice": "Updates the address pointing to a Registry contract."
-				}
-			}
+			"methods": {}
 		}
 	},
 	"settings": {
@@ -808,7 +768,7 @@
 		"evmVersion": "petersburg",
 		"libraries": {},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
@@ -822,10 +782,10 @@
 			]
 		},
 		"contracts/IAccounts.sol": {
-			"keccak256": "0xa05af846fa72b278f6dae96684f5e99f2abdcc5ce6753d83de77b1d277e7bbc9",
+			"keccak256": "0x4c2daa9f025933c81364dd3a05f8443938324dc6b9d45d742974d09503d46e79",
 			"urls": [
-				"bzz-raw://9f3327064a130e183692cb2ef068c295fddb087d108c5d7449baa0ae01f578d0",
-				"dweb:/ipfs/QmTuNSE1FYETqt3MUvd2xE4fhVVhxzYFqUF54pgpMctN5B"
+				"bzz-raw://c87fa727075bf4e271f789514d00b888fb4f7b10d3dda55ef9ca8ec67fb042e7",
+				"dweb:/ipfs/QmX1kcr9VVPkA5fFf4kF2TmArS3jBtsdzSt5HVMvsvofBC"
 			]
 		},
 		"contracts/IElection.sol": {
@@ -857,10 +817,10 @@
 			]
 		},
 		"contracts/IValidators2.sol": {
-			"keccak256": "0x0859896e22452023c78e41a469fc327422a1a26a2b6622350c04333399c9b894",
+			"keccak256": "0x509df133deee69a82a40b6dcf8650053fab95737a8533da43afed1ae32b29471",
 			"urls": [
-				"bzz-raw://343d790a9490cab5a910d6194770a677178afd047b3ade2d27faa5fc636d6b62",
-				"dweb:/ipfs/QmT9GXVXrMi4maAj13ABohojSpM3LJUxzT8pV8aFSG6zhF"
+				"bzz-raw://d675458d038b5b75ed16fa17b5fa7785e893f030e547168a2c9f50ec86ca782e",
+				"dweb:/ipfs/QmexD8Y6veGLddVkBCZPhc4QCs7UB1mFiHpkhVv5TndGaP"
 			]
 		},
 		"contracts/Initializable.sol": {
@@ -870,11 +830,18 @@
 				"dweb:/ipfs/QmWm3GQoHtbGKdA8b7eiXoR9v9KJDEcGz52tzeTmocYqPC"
 			]
 		},
-		"contracts/Validators.sol": {
-			"keccak256": "0xeda7d2864716657b09171841ac892c0bc7367f36d9894b15f4756545f40fd2bd",
+		"contracts/IterableMapping.sol": {
+			"keccak256": "0xd0c5fe622a82e3e8453ab836025031eae47dac99d96cfbb9fe955d90918861de",
 			"urls": [
-				"bzz-raw://ebb63a5e3aa1f065856198ccebf7679efdd58a7e5e62174bb96f15b94d226149",
-				"dweb:/ipfs/Qmc245WjZWy3QWdRwLdooVLGoE1QVxDCqAMxgH5QtKmq9h"
+				"bzz-raw://d96a315c085eca086e95df3953585a6d25cd5289774d56d84f128aa7d1508d04",
+				"dweb:/ipfs/QmTsA3Z2fmBUStfovf55d91tb7Mph2TfKpCYDMznkTjLJN"
+			]
+		},
+		"contracts/Validators.sol": {
+			"keccak256": "0xdf0246fadb3efaba9bdc7e12f7c072ee2d34534da094efdfd5472100e276d2c3",
+			"urls": [
+				"bzz-raw://698c6d5ac1879866a3de7ac9d35f1b71305239ada597a5f084c7a473fc3ee20c",
+				"dweb:/ipfs/QmaYUh2t5m3azSZdtexJhRyxDHuhHkPjsg1UNbFh9yAq7C"
 			]
 		},
 		"contracts/openzeppelin-solidity/contracts/GSN/Context.sol": {
@@ -889,6 +856,13 @@
 			"urls": [
 				"bzz-raw://bed15b3f35ed05505efc8fb5cb01d06c52230fbcaadf4ed24a85b1ac2f15f33c",
 				"dweb:/ipfs/QmS6tW81u8E4tvzVfVuqEuMCkdwAozQ6pKJPRBR4JEVmQp"
+			]
+		},
+		"contracts/openzeppelin-solidity/contracts/math/SafeMath.sol": {
+			"keccak256": "0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076",
+			"urls": [
+				"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f",
+				"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq"
 			]
 		},
 		"contracts/openzeppelin-solidity/contracts/ownership/Ownable.sol": {

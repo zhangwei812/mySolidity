@@ -1,0 +1,781 @@
+{
+	"compiler": {
+		"version": "0.5.13+commit.5b0b510c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "test",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					}
+				],
+				"name": "RegistrySet",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "EIP712_AUTHORIZE_SIGNER_TYPEHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorizedBy",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "createAccount",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "eip712DomainSeparator",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getDataEncryptionKey",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getName",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getVersionNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getWalletAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "initialized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "isAccount",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					}
+				],
+				"name": "isLegacySigner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					}
+				],
+				"name": "isSigner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "registry",
+				"outputs": [
+					{
+						"internalType": "contract IRegistry",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "dataEncryptionKey",
+						"type": "bytes"
+					},
+					{
+						"internalType": "address",
+						"name": "walletAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "setAccount",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "dataEncryptionKey",
+						"type": "bytes"
+					}
+				],
+				"name": "setAccountDataEncryptionKey",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "setEip712DomainSeparator",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "setName",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "registryAddress",
+						"type": "address"
+					}
+				],
+				"name": "setRegistry",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "walletAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "setWalletAddress",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					}
+				],
+				"name": "validatorSignerToAccount",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"constructor": {
+					"params": {
+						"test": "Set to true to skip implementation initialization"
+					}
+				},
+				"createAccount()": {
+					"return": "True if account creation succeeded."
+				},
+				"getVersionNumber()": {
+					"return": "The storage, major, minor, and patch version of the contract."
+				},
+				"initialize(address)": {
+					"params": {
+						"registryAddress": "The address of the registry core smart contract."
+					}
+				},
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setName(string)": {
+					"params": {
+						"name": "The name to set."
+					}
+				},
+				"setRegistry(address)": {
+					"params": {
+						"registryAddress": "The address of a registry contract for routing to other contracts."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {
+				"constructor": "Sets initialized == true on implementation contracts",
+				"createAccount()": {
+					"notice": "Creates an account."
+				},
+				"getVersionNumber()": {
+					"notice": "Returns the storage, major, minor, and patch version of the contract."
+				},
+				"initialize(address)": {
+					"notice": "Used in place of the constructor to allow the contract to be upgradable via proxy."
+				},
+				"setEip712DomainSeparator()": {
+					"notice": "Sets the EIP712 domain separator for the Celo Accounts abstraction."
+				},
+				"setName(string)": {
+					"notice": "Setter for the name of an account."
+				},
+				"setRegistry(address)": {
+					"notice": "Updates the address pointing to a Registry contract."
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Accounts.sol": "Accounts"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Accounts.sol": {
+			"keccak256": "0x20cd4dca6ff14290b7888a36cfe9d7d8a51e9aa0d2f5e585fb2cc34e8ca8d611",
+			"urls": [
+				"bzz-raw://9984e67090d1457c56d40e0746bb0db9e793400330497afd95f81ca199e74eba",
+				"dweb:/ipfs/QmPMu4TCpsicriBqqBxpf6K3ybBs3jTHwBob9kdDZGcmfj"
+			]
+		},
+		"contracts/IAccounts.sol": {
+			"keccak256": "0x4c2daa9f025933c81364dd3a05f8443938324dc6b9d45d742974d09503d46e79",
+			"urls": [
+				"bzz-raw://c87fa727075bf4e271f789514d00b888fb4f7b10d3dda55ef9ca8ec67fb042e7",
+				"dweb:/ipfs/QmX1kcr9VVPkA5fFf4kF2TmArS3jBtsdzSt5HVMvsvofBC"
+			]
+		},
+		"contracts/IAttestations.sol": {
+			"keccak256": "0x305e1bb4bf491a820aa4cfced9aca908d4c220967b439894394cdc7b9158d83b",
+			"urls": [
+				"bzz-raw://0a0fcba61aa42fb65bfaeb370183ba5b97845dd0008a5c695e1fea26be14938f",
+				"dweb:/ipfs/QmZ46QVJ61L46t3CvaQYndqcbbrMqp8tvD6py6mCGhVfqn"
+			]
+		},
+		"contracts/IElection.sol": {
+			"keccak256": "0x6b2d3908ee7df3b4aa43b10a5f463d554631ef739b87dd79cef6894eee8965fd",
+			"urls": [
+				"bzz-raw://945a1c42329f85082c14cd8367c1bd08526f7503ac2e67a09126416dc988e36f",
+				"dweb:/ipfs/QmX4UdjHLseJaQS1Zz42yGUEnGwFD9BiJ5MQH6kzPD7f9E"
+			]
+		},
+		"contracts/IExchange.sol": {
+			"keccak256": "0x3e5c662ac26136ab5682c76dc9ffdc47935f4c632f76cb1f05b575c788d219ac",
+			"urls": [
+				"bzz-raw://cfedba731377c5ea1c6395dce4f8eeee67cb01f1c7d1f28b776f734758685cae",
+				"dweb:/ipfs/QmU3bkRPFYFAdkcFWZqBVwdmGE1c3oPVvh6cfmfzG9DyxT"
+			]
+		},
+		"contracts/IFeeCurrencyWhitelist.sol": {
+			"keccak256": "0xd6cd73469293b2a8005963d006b43610bea2fc60e155ba9c0ae42fb44ad7d5c7",
+			"urls": [
+				"bzz-raw://500d954f5282ff38b7d913b0b5c5de4b01d60b90b687e3f1cd8c9dcefb332e9c",
+				"dweb:/ipfs/Qmd2j3EGkivcCeSCdqp63srkb8pqncT1cwEPGe3La4opp6"
+			]
+		},
+		"contracts/IFreezer.sol": {
+			"keccak256": "0x78ff39ccff90a9a0f34adfe9fc6b749f62a3aa75f4dc9959fd572819a922a0e0",
+			"urls": [
+				"bzz-raw://a5754951f4b3d3c4facae83ea585f6a07933e1d4e5cf7ba8d5c197585dd10a9b",
+				"dweb:/ipfs/Qmd2MD6Sn1DGJ6438N2gqXwuajhSYsWRUpp5Q7c3EjF94k"
+			]
+		},
+		"contracts/IGovernance.sol": {
+			"keccak256": "0xd321dd92bd547d6aa56003c3b61e739363d05e80717259c9caf980128ee72e1a",
+			"urls": [
+				"bzz-raw://c7f7fdb5509a6c77e5a99b718bf984a7e75683f92f3cd1cb94190122fbcd5472",
+				"dweb:/ipfs/QmbwKeHpVG6uTd5gk78PtfLGap9G9xYVYe4TAs3T7mR73X"
+			]
+		},
+		"contracts/ILockedGold.sol": {
+			"keccak256": "0x22562c31312723af9d6e9a4856d34bc500689186ec1bbe0facc8ab52500b8ff1",
+			"urls": [
+				"bzz-raw://ec9407b1b03b664b4a9d13cd83290c5329c59678dff74e2f8184fcc6fdaa536e",
+				"dweb:/ipfs/QmfGyU4WfYbeWC4gZjTRiwruFhAQaLFU3iXJHocTVho1Ct"
+			]
+		},
+		"contracts/IRandom.sol": {
+			"keccak256": "0x612bab8f318220a22c19a15ddff1fda35ece21137b1d1b68c5c0ae1feb76afc8",
+			"urls": [
+				"bzz-raw://9996ffd57ff98f9eb8d3f0fb0318e76a18990bdfa19cfc6d09dd68f474bed464",
+				"dweb:/ipfs/QmRNEY14DxkVnBaQdUdq6ZJjr6WiK9PjeSXAPSutLvLY1S"
+			]
+		},
+		"contracts/IRegistry.sol": {
+			"keccak256": "0x83c12b6395bdac8526cad7e1089cfd70f31f8582333cbb4c1c94d755f9b0ffa2",
+			"urls": [
+				"bzz-raw://ba7781680b68887d2ab7c923e1f86a05c0091d75cd401de48a26b894f6483225",
+				"dweb:/ipfs/QmQS1jzBHy67CZJCTkowRUhFgGbNaFavh9zV7KytRYiQpQ"
+			]
+		},
+		"contracts/IReserve.sol": {
+			"keccak256": "0x407e13dade065bb44532ed1910124cd48676b5b1aecae6826c6e5bb0972bff6b",
+			"urls": [
+				"bzz-raw://620f461bd98c3eeaf71665ac73a0b4c3ec7b7a5ec9e03431fc223c2fa84c62c0",
+				"dweb:/ipfs/QmT3PGje4ZdcomUwxGPD3yF23BT8uUDVUtpep6MF7zsmHs"
+			]
+		},
+		"contracts/ISortedOracles.sol": {
+			"keccak256": "0x459e25b4ef7b19f3db98eb2cf4801d5ffcb0d03911096b48f296d260a4d34525",
+			"urls": [
+				"bzz-raw://50aeff4147c83e9db6180a071beb2bfe8023bb3e528657b14bb1338d0133f743",
+				"dweb:/ipfs/QmQ5ptH44pJ58VUg4PdSSnuJUT4CQfK8cdBTH9tRbZVyL1"
+			]
+		},
+		"contracts/IStableToken.sol": {
+			"keccak256": "0x502ddada8a10a08abb2170e63ea9db8cfcb5f50b814c264c7eab2138f79c96c2",
+			"urls": [
+				"bzz-raw://8bbbf253ad19d5c2ee43f44e58d51fe3cdcf987eec04dac44c8ded060a0506fd",
+				"dweb:/ipfs/QmTqHHeSMUpuNE6GyMeGYT6CY3CwW9ZKUXoCawpVovBCuv"
+			]
+		},
+		"contracts/IValidators.sol": {
+			"keccak256": "0x66d153d77fdfe6a468e9aa5feb069528f4bf694fca8ffd615a5f60a89c5ba4c2",
+			"urls": [
+				"bzz-raw://35530096df2c626c616fa207a3ffe93f1cd6768d3729421615d97c6e049f52d1",
+				"dweb:/ipfs/Qmc1r4dzUaQFQCdQ3wR96EvppqgPa7xXZHMajnzWywBYm3"
+			]
+		},
+		"contracts/Initializable.sol": {
+			"keccak256": "0x83419175e397c0df7bf4657451fae81bad4ef97f3ff7b5e9823bad2b19777c77",
+			"urls": [
+				"bzz-raw://e75bf4255c6a635b802cff1eb914e3e72d7fbf19a267eb25e6c866a30099686d",
+				"dweb:/ipfs/QmWm3GQoHtbGKdA8b7eiXoR9v9KJDEcGz52tzeTmocYqPC"
+			]
+		},
+		"contracts/Signatures.sol": {
+			"keccak256": "0xe58d7f8f22a3d023aab7175a6893590e239c3fbad60257784297384bad861d1b",
+			"urls": [
+				"bzz-raw://4cfa2257461f1d6ffaffca4035da67fbf00d7e2bd9123f5752c4b4c746d6f782",
+				"dweb:/ipfs/QmWdWjm5dzPUeKHRVtDiWKjynZEJdjDxkojwXKb2jW3fjX"
+			]
+		},
+		"contracts/UsingRegistry.sol": {
+			"keccak256": "0x20a5a25f9d432720ab090feb6375f8a21f536e4d5650163cbb2aed075d4391ac",
+			"urls": [
+				"bzz-raw://17eebc78b5365c72fde6e9e49b04fde9c70238c2cd29018626040e073711245f",
+				"dweb:/ipfs/QmZDxtEmHsynYYB3Tr6wEpGxq4aw3vtq7gK2ZP6hyuvJZC"
+			]
+		},
+		"contracts/openzeppelin-solidity/contracts/GSN/Context.sol": {
+			"keccak256": "0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061",
+			"urls": [
+				"bzz-raw://216ef9d6b614db4eb46970b4e84903f2534a45572dd30a79f0041f1a5830f436",
+				"dweb:/ipfs/QmNPrJ4MWKUAWzKXpUqeyKRUfosaoANZAqXgvepdrCwZAG"
+			]
+		},
+		"contracts/openzeppelin-solidity/contracts/cryptography/ECDSA.sol": {
+			"keccak256": "0xc89ea7e48ba477b1781b24ae963442fff1bb2af33b6178dad679a3fa2f5ab2de",
+			"urls": [
+				"bzz-raw://b736ddad8143f8f1cd13c20809d4ebce5f5a8c7725081b0b703294078bd506d1",
+				"dweb:/ipfs/QmdhTWCXFCuwG9JaPMjwnhkQoDj9su8R7KMPNvD5z9KeWD"
+			]
+		},
+		"contracts/openzeppelin-solidity/contracts/math/SafeMath.sol": {
+			"keccak256": "0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076",
+			"urls": [
+				"bzz-raw://31113152e1ddb78fe7a4197f247591ca894e93f916867beb708d8e747b6cc74f",
+				"dweb:/ipfs/QmbZaJyXdpsYGykVhHH9qpVGQg9DGCxE2QufbCUy3daTgq"
+			]
+		},
+		"contracts/openzeppelin-solidity/contracts/ownership/Ownable.sol": {
+			"keccak256": "0x6fb9d7889769d7cc161225f9ef7a90e468ba9788b253816f8d8b6894d3472c24",
+			"urls": [
+				"bzz-raw://cf4c00fc3c37cc5acf0c82ec6fd97bab67d72c2567fdc0ebf023d9c09b30a08e",
+				"dweb:/ipfs/Qmb7TChG6DsEDX7LooJ4vmxot19f7VXX8S1zUGPeJTWbwZ"
+			]
+		},
+		"contracts/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9",
+			"urls": [
+				"bzz-raw://59fd025151435da35faa8093a5c7a17de02de9d08ad27275c5cdf05050820d91",
+				"dweb:/ipfs/QmQMvwEcPhoRXzbXyrdoeRtvLoifUW9Qh7Luho7bmUPRkc"
+			]
+		}
+	},
+	"version": 1
+}
