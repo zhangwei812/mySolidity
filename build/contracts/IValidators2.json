@@ -29,8 +29,14 @@
     },
     {
       "constant": true,
-      "inputs": [],
-      "name": "getFirstGroupValidators",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSelectValidators",
       "outputs": [
         {
           "internalType": "address[]",
@@ -43,25 +49,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getFirstGroupValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"getGroupValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IValidators2.sol\":\"IValidators2\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IValidators2.sol\":{\"keccak256\":\"0xcdce118e43331ebfa8dd082a28d6f0f251d1fed527ce07ee63b5bb139beb0a5e\",\"urls\":[\"bzz-raw://9a14de97e5e518ba3d61bc38f38dba82a5e223d5ae6d41c87afbca8497a43be5\",\"dweb:/ipfs/QmUC71kyaQc4TMaNB1HZ8UtkaEddiskGPem2QaK7jPFmVG\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"getGroupValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"getSelectValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IValidators2.sol\":\"IValidators2\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IValidators2.sol\":{\"keccak256\":\"0xceb204b2fec9500f71b68d0101f9db84afb7d389b7d6ec8d74fb1515d74ba580\",\"urls\":[\"bzz-raw://ccd405843b00895f830f8447aba40775e05bd1214ab2aeb91d4e3422139671cc\",\"dweb:/ipfs/Qme1TaURzdqLNz1cqWBPThT1zSVzaZBYi1NL5eqTwRo48T\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.13;\r\n\r\ninterface IValidators2 {\r\n\r\n  function getGroupValidators(address, uint256) external view returns (address[] memory);\r\n  function getFirstGroupValidators() external view returns (address[] memory);\r\n\r\n}\r\n",
+  "source": "pragma solidity ^0.5.13;\r\n\r\ninterface IValidators2 {\r\n\r\n  function getGroupValidators(address, uint256) external view returns (address[] memory);\r\n  function getSelectValidators(uint256) external view returns (address[] memory);\r\n\r\n}\r\n",
   "sourcePath": "D:\\work\\zhangwei812\\mySolidity\\mySolidity\\contracts\\IValidators2.sol",
   "ast": {
     "absolutePath": "project:/contracts/IValidators2.sol",
     "exportedSymbols": {
       "IValidators2": [
-        4103
+        4186
       ]
     },
-    "id": 4104,
+    "id": 4187,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4086,
+        "id": 4167,
         "literals": [
           "solidity",
           "^",
@@ -77,9 +83,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 4103,
+        "id": 4186,
         "linearizedBaseContracts": [
-          4103
+          4186
         ],
         "name": "IValidators2",
         "nodeType": "ContractDefinition",
@@ -87,22 +93,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 4096,
+            "id": 4177,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getGroupValidators",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4091,
+              "id": 4172,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4088,
+                  "id": 4169,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4096,
+                  "scope": 4177,
                   "src": "86:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -111,7 +117,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4087,
+                    "id": 4168,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "86:7:21",
@@ -126,10 +132,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 4090,
+                  "id": 4171,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4096,
+                  "scope": 4177,
                   "src": "95:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -138,7 +144,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4089,
+                    "id": 4170,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "95:7:21",
@@ -154,15 +160,15 @@
               "src": "85:18:21"
             },
             "returnParameters": {
-              "id": 4095,
+              "id": 4176,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4094,
+                  "id": 4175,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4096,
+                  "scope": 4177,
                   "src": "127:16:21",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -172,7 +178,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 4092,
+                      "id": 4173,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "127:7:21",
@@ -182,7 +188,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 4093,
+                    "id": 4174,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "127:9:21",
@@ -197,7 +203,7 @@
               ],
               "src": "126:18:21"
             },
-            "scope": 4103,
+            "scope": 4186,
             "src": "58:87:21",
             "stateMutability": "view",
             "superFunction": null,
@@ -206,29 +212,56 @@
           {
             "body": null,
             "documentation": null,
-            "id": 4102,
+            "id": 4185,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "getFirstGroupValidators",
+            "name": "getSelectValidators",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4097,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "181:2:21"
-            },
-            "returnParameters": {
-              "id": 4101,
+              "id": 4180,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4100,
+                  "id": 4179,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4102,
-                  "src": "207:16:21",
+                  "scope": 4185,
+                  "src": "178:7:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4178,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "178:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "177:9:21"
+            },
+            "returnParameters": {
+              "id": 4184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4183,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4185,
+                  "src": "210:16:21",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -237,20 +270,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 4098,
+                      "id": 4181,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "207:7:21",
+                      "src": "210:7:21",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 4099,
+                    "id": 4182,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "207:9:21",
+                    "src": "210:9:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -260,27 +293,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "206:18:21"
+              "src": "209:18:21"
             },
-            "scope": 4103,
-            "src": "149:76:21",
+            "scope": 4186,
+            "src": "149:79:21",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 4104,
-        "src": "28:202:21"
+        "scope": 4187,
+        "src": "28:205:21"
       }
     ],
-    "src": "0:232:21"
+    "src": "0:235:21"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/IValidators2.sol",
       "exportedSymbols": {
         "IValidators2": [
-          4103
+          4186
         ]
       }
     },
@@ -294,7 +327,7 @@
             ".13"
           ]
         },
-        "id": 4086,
+        "id": 4167,
         "name": "PragmaDirective",
         "src": "0:24:21"
       },
@@ -310,10 +343,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            4103
+            4186
           ],
           "name": "IValidators2",
-          "scope": 4104
+          "scope": 4187
         },
         "children": [
           {
@@ -327,7 +360,7 @@
                 null
               ],
               "name": "getGroupValidators",
-              "scope": 4103,
+              "scope": 4186,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -339,7 +372,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 4096,
+                      "scope": 4177,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -353,12 +386,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 4087,
+                        "id": 4168,
                         "name": "ElementaryTypeName",
                         "src": "86:7:21"
                       }
                     ],
-                    "id": 4088,
+                    "id": 4169,
                     "name": "VariableDeclaration",
                     "src": "86:7:21"
                   },
@@ -366,7 +399,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 4096,
+                      "scope": 4177,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -379,17 +412,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 4089,
+                        "id": 4170,
                         "name": "ElementaryTypeName",
                         "src": "95:7:21"
                       }
                     ],
-                    "id": 4090,
+                    "id": 4171,
                     "name": "VariableDeclaration",
                     "src": "95:7:21"
                   }
                 ],
-                "id": 4091,
+                "id": 4172,
                 "name": "ParameterList",
                 "src": "85:18:21"
               },
@@ -399,7 +432,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 4096,
+                      "scope": 4177,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "address[]",
@@ -419,27 +452,27 @@
                               "stateMutability": "nonpayable",
                               "type": "address"
                             },
-                            "id": 4092,
+                            "id": 4173,
                             "name": "ElementaryTypeName",
                             "src": "127:7:21"
                           }
                         ],
-                        "id": 4093,
+                        "id": 4174,
                         "name": "ArrayTypeName",
                         "src": "127:9:21"
                       }
                     ],
-                    "id": 4094,
+                    "id": 4175,
                     "name": "VariableDeclaration",
                     "src": "127:16:21"
                   }
                 ],
-                "id": 4095,
+                "id": 4176,
                 "name": "ParameterList",
                 "src": "126:18:21"
               }
             ],
-            "id": 4096,
+            "id": 4177,
             "name": "FunctionDefinition",
             "src": "58:87:21"
           },
@@ -453,23 +486,45 @@
               "modifiers": [
                 null
               ],
-              "name": "getFirstGroupValidators",
-              "scope": 4103,
+              "name": "getSelectValidators",
+              "scope": 4186,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
             },
             "children": [
               {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 4097,
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 4185,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4178,
+                        "name": "ElementaryTypeName",
+                        "src": "178:7:21"
+                      }
+                    ],
+                    "id": 4179,
+                    "name": "VariableDeclaration",
+                    "src": "178:7:21"
+                  }
+                ],
+                "id": 4180,
                 "name": "ParameterList",
-                "src": "181:2:21"
+                "src": "177:9:21"
               },
               {
                 "children": [
@@ -477,7 +532,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 4102,
+                      "scope": 4185,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "address[]",
@@ -497,39 +552,39 @@
                               "stateMutability": "nonpayable",
                               "type": "address"
                             },
-                            "id": 4098,
+                            "id": 4181,
                             "name": "ElementaryTypeName",
-                            "src": "207:7:21"
+                            "src": "210:7:21"
                           }
                         ],
-                        "id": 4099,
+                        "id": 4182,
                         "name": "ArrayTypeName",
-                        "src": "207:9:21"
+                        "src": "210:9:21"
                       }
                     ],
-                    "id": 4100,
+                    "id": 4183,
                     "name": "VariableDeclaration",
-                    "src": "207:16:21"
+                    "src": "210:16:21"
                   }
                 ],
-                "id": 4101,
+                "id": 4184,
                 "name": "ParameterList",
-                "src": "206:18:21"
+                "src": "209:18:21"
               }
             ],
-            "id": 4102,
+            "id": 4185,
             "name": "FunctionDefinition",
-            "src": "149:76:21"
+            "src": "149:79:21"
           }
         ],
-        "id": 4103,
+        "id": 4186,
         "name": "ContractDefinition",
-        "src": "28:202:21"
+        "src": "28:205:21"
       }
     ],
-    "id": 4104,
+    "id": 4187,
     "name": "SourceUnit",
-    "src": "0:232:21"
+    "src": "0:235:21"
   },
   "compiler": {
     "name": "solc",
@@ -537,7 +592,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-05T11:19:21.277Z",
+  "updatedAt": "2021-11-07T14:18:14.537Z",
   "devdoc": {
     "methods": {}
   },

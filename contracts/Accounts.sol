@@ -104,10 +104,7 @@ UsingRegistry
      */
     function setEip712DomainSeparator() public {
         uint256 chainId;
-
         chainId = 211;
-
-
         eip712DomainSeparator = keccak256(
             abi.encode(
                 keccak256(

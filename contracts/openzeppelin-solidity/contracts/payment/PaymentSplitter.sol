@@ -98,6 +98,8 @@ contract PaymentSplitter is Context {
     /**
      * @dev Triggers a transfer to `account` of the amount of Ether they are owed, according to their percentage of the
      * total shares and their previous withdrawals.
+     *@dev会根据他们在账户中所占的百分比，将他们所欠的乙醚金额转移到“账户”
+     *总股份及其以前的提款。
      */
     function release(address payable account) public {
         require(_shares[account] > 0, "PaymentSplitter: account has no shares");

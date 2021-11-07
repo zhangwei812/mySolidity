@@ -324,11 +324,12 @@ Console
 
 
     function initialize(
-        address registryAddress
+        address registryAddress,
+        uint256 _maxNumGroupsVotedFor
     ) external initializer {
         _transferOwnership(msg.sender);
         setRegistry(registryAddress);
-
+        setMaxNumGroupsVotedFor(_maxNumGroupsVotedFor);
     }
 
     /**
@@ -337,29 +338,31 @@ Console
      */
     constructor(bool test) public Initializable(test) {}
 
-    function vote(address group, uint256 value, address lesser, address greater)
-    external
-    returns (bool)
+    function vote(address group, uint256 value, address lesser, address greater) external returns (bool)
     {
+        // 查看組在不在
         //        require(votes.total.eligible.contains(group), "Group not eligible");
-        //        require(0 < value, "Vote value cannot be zero");
-        //        //    address account = getAccounts().voteSignerToAccount(msg.sender);
-        //        address account = msg.sender;
-        //        // Add group to the groups voted for by the account.
-        //        bool alreadyVotedForGroup = false;
-        //        address[] storage groups = votes.groupsVotedFor[account];
-        //        for (uint256 i = 0; i < groups.length; i = i.add(1)) {
-        //            alreadyVotedForGroup = alreadyVotedForGroup || groups[i] == group;
-        //        }
-        //        if (!alreadyVotedForGroup) {
-        //            //      require(groups.length < maxNumGroupsVotedFor, "Voted for too many groups");
-        //            groups.push(group);
-        //        }
+        require(0 < value, "Vote value cannot be zero");
+        address account = msg.sender;
+        // Add group to the groups voted for by the account.
+        bool alreadyVotedForGroup = false;
+        address[] storage groups = votes.groupsVotedFor[account];
+        for (uint256 i = 0; i < groups.length; i = i.add(1)) {
+            alreadyVotedForGroup = alreadyVotedForGroup || groups[i] == group;
+        }
+        // 没有给这个组投过票-> 一个组只能投一次票
+        if (!alreadyVotedForGroup) {
+            // 次数限制
+            require(groups.length < maxNumGroupsVotedFor, "Voted for too many groups");
+            // 投票成功
+            groups.push(group);
+        }
+        return true;
+    }
 
-        //    incrementPendingVotes(group, account, value);
-        //    incrementTotalVotes(group, value, lesser, greater);
-        //    getLockedGold().decrementNonvotingAccountBalance(account, value);
-
+    function setMaxNumGroupsVotedFor(uint256 _maxNumGroupsVotedFor) public onlyOwner returns (bool) {
+        require(_maxNumGroupsVotedFor != maxNumGroupsVotedFor, "Max groups voted for not changed");
+        maxNumGroupsVotedFor = _maxNumGroupsVotedFor;
         return true;
     }
 
@@ -386,8 +389,8 @@ Console
         return (uint256(4), uint256(4));
     }
     //新的
-    function electValidatorSigners(address group) external returns (address[] memory) {
-        return getValidators().getGroupValidators(group, electableValidators.max);
+    function electValidatorSigners() external returns (address[] memory) {
+        return getValidators().getSelectValidators(uint256(4));
     }
     // 选当前的
     function electNValidatorSigners(uint256 minElectableValidators, uint256 maxElectableValidators)
@@ -395,15 +398,11 @@ Console
     view
     returns (address[] memory)
     {
-        return getValidators().getFirstGroupValidators();
+        return getValidators().getSelectValidators(maxElectableValidators);
     }
 
     function getTotalVotes() public view returns (uint256) {
         return votes.active.total.add(votes.pending.total);
     }
 
-    function setValidators2(address validators2) public {
-        Validators2 = IValidators2(validators2);
-        log("setValidators2", validators2);
-    }
 }

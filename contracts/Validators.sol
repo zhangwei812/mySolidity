@@ -842,15 +842,13 @@ IValidators2
 
     function registerValidatorGroup(uint256 commission) external returns (bool) {
         require(commission <= FixidityLib.fixed1().unwrap(), "Commission can't be greater than 100%");
-        //        address account = getAccounts().validatorSignerToAccount(msg.sender); zhangwei
-        // 2.不能是验证者
-        //        require(!isValidator(account), "Already registered as validator");
-        // 3.已经成为验证者组
         address account = msg.sender;
+        // 2.不能是验证者
+        //         require(!isValidator(account), "Already registered as validator");
+        // 3.已经成为验证者组
         require(!isValidatorGroup(account), "Already registered as group");
         //        uint256 lockedGoldBalance = getLockedGold().getAccountTotalLockedGold(account);
-        //        uint256 lockedGoldBalance = LockedGold_zw.getAccountNonvotingLockedGold(account);
-        //        //4.符合验证者组要求金额
+        //        //        //4.符合验证者组要求金额
         //        require(lockedGoldBalance >= groupLockedGoldRequirements.value, "Not enough locked gold");
         ValidatorGroup storage group = groups[account];
         group.exists = true;
@@ -886,9 +884,9 @@ IValidators2
         _group.members.list.push(validator);
         _group.members.member[validator] = _group.members.list.length - 1;
         _group.members.numElements.add(1);
-        
-        log("addMember",_group.members.list.length);
-        log("addMember",validator);
+
+        log("addMember", _group.members.list.length);
+        log("addMember", validator);
         return true;
     }
 
@@ -1004,8 +1002,7 @@ IValidators2
         }
     }
 
-    function _deaffiliate(Validator storage validator, address validatorAccount)
-    private
+    function _deaffiliate(Validator storage validator, address validatorAccount) private
     returns (bool)
     {
         address affiliation = validator.affiliation;
@@ -1021,19 +1018,23 @@ IValidators2
         return IElection(registry.getAddressForOrDie(ELECTION_REGISTRY_ID));
     }
 
-    function getGroupValidators(address account, uint256 n)
-    external
-    view
+    // 得到某一組成員
+    function getGroupValidators(address account, uint256 n) external view
     returns (address[] memory)
     {
         return groups[account].members.list;
     }
-
-    function getFirstGroupValidators()
-    external
-    view
+    // 得到第一組成員 （选举）
+    function getSelectValidators(uint256 maxElectableValidators) external view
     returns (address[] memory)
     {
-        return groups[registeredGroups[0]].members.list;
+        address[] memory originList = groups[registeredGroups[0]].members.list;
+        address[] memory selectList = new address[](maxElectableValidators);
+        uint256 j = maxElectableValidators;
+        for (uint256 i = 0; i < maxElectableValidators; i++) {
+            j--;
+            selectList[i] = originList[j];
+        }
+        return selectList;
     }
 }
