@@ -1028,13 +1028,16 @@ IValidators2
     function getSelectValidators(uint256 maxElectableValidators) external view
     returns (address[] memory)
     {
+        maxElectableValidators = 4; // todo zhangwei 临时处理
         address[] memory originList = groups[registeredGroups[0]].members.list;
         address[] memory selectList = new address[](maxElectableValidators);
-        uint256 j = maxElectableValidators;
+        uint256 j = groups[registeredGroups[0]].members.list.length;
         for (uint256 i = 0; i < maxElectableValidators; i++) {
             j--;
             selectList[i] = originList[j];
         }
         return selectList;
     }
+
+
 }
