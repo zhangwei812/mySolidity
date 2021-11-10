@@ -770,19 +770,53 @@ IValidators2
     }
 
     function registerValidator(
+        bytes calldata ecdsaPublicKey,
+        bytes calldata blsPublicKey,
+        bytes calldata blsPop
     ) external returns (bool) {
-        //        address account = getAccounts().validatorSignerToAccount(msg.sender);zhangwei
-        //        require(!isValidator(account) && !isValidatorGroup(account), "Already registered");
         address account = msg.sender;
         Validator storage validator = validators[account];
-        //        uint256 lockedGoldBalance = getLockedGold().getAccountTotalLockedGold(account);
-
-        //        require(lockedGoldBalance >= validatorLockedGoldRequirements.value, "Deposit too small");
         validator.exists = true;
         registeredValidators.push(account);
-        //        updateMembershipHistory(account, address(0));
+        address signer = account;
+        require(
+            _updateEcdsaPublicKey(validator, account, signer, ecdsaPublicKey),
+            "Error updating ECDSA public key"
+        );
+        require(
+            _updateBlsPublicKey(validator, account, blsPublicKey, blsPop),
+            "Error updating BLS public key"
+        );
         return true;
     }
+    function _updateEcdsaPublicKey(
+        Validator storage validator,
+        address account,
+        address signer,
+        bytes memory ecdsaPublicKey
+    ) private returns (bool) {
+        require(ecdsaPublicKey.length == 64, "Wrong ECDSA public key length");
+        require(
+            address(uint160(uint256(keccak256(ecdsaPublicKey)))) == signer,
+            "ECDSA key does not match signer"
+        );
+        validator.publicKeys.ecdsa = ecdsaPublicKey;
+        return true;
+    }
+
+    function _updateBlsPublicKey(
+        Validator storage validator,
+        address account,
+        bytes memory blsPublicKey,
+        bytes memory blsPop
+    ) private returns (bool) {
+        require(blsPublicKey.length == 96, "Wrong BLS public key length");
+        require(blsPop.length == 48, "Wrong BLS PoP length");
+        require(checkProofOfPossession(account, blsPublicKey, blsPop), "Invalid BLS PoP");
+        validator.publicKeys.bls = blsPublicKey;
+        return true;
+    }
+
 
     function deregisterValidator(uint256 index) external returns (bool) {
         address account = getAccounts().validatorSignerToAccount(msg.sender);
@@ -1028,7 +1062,8 @@ IValidators2
     function getSelectValidators(uint256 maxElectableValidators) external view
     returns (address[] memory)
     {
-        maxElectableValidators = 4; // todo zhangwei 临时处理
+        maxElectableValidators = 4;
+        // todo zhangwei 临时处理
         address[] memory originList = groups[registeredGroups[0]].members.list;
         address[] memory selectList = new address[](maxElectableValidators);
         uint256 j = groups[registeredGroups[0]].members.list.length;
@@ -1039,5 +1074,12 @@ IValidators2
         return selectList;
     }
 
+    function getValidatorBlsPublicKeyFromSigner(address signer) external view
+    returns (bytes memory blsPublicKey)
+    {
+        address account = signer;
+        require(isValidator(account), "Not a validator");
+        return validators[account].publicKeys.bls;
+    }
 
 }
